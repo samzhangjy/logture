@@ -1,0 +1,59 @@
+
+
+.slogan {
+  position: absolute;
+  right: 30px;
+  top: 40px;
+}
+
+.sloganItem {
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.titleContainer {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 50px 20px 20px 20px;
+  height: 350px;
+  width: 70vw;
+}
+
+.spacer {
+  margin-top: 20px;
+}
+
+.navigationContainer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 300px;
+  column-gap: 10px;
+}
+
+.navigation {
+  grid-column: span 1 / span 1;
+  color: #fff;
+  transition: all 0.2s;
+  text-decoration: none;
+  position: relative;
+  color: var(--hover-light);
+}
+
+.navigation::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: var(--secondary);
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.navigation:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}

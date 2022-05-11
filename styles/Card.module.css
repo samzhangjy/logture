@@ -1,0 +1,33 @@
+.card {
+  margin-top: 20px;
+  border: 2px solid var(--primary-light);
+  padding: 20px;
+  transition: ease-in-out 0.3s;
+  height: calc(100% - 64px);
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 4px 4px 0px var(--primary);
+}
+
+.card:active {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+
+.cardCover {
+  width: calc(100% - 6px);
+  border: 2px solid var(--secondary);
+  border-left-color: var(--background);
+  border-bottom-color: var(--background);
+  transition: all 0.2s;
+}
+
+.cardCover:hover {
+  border-color: var(--hover);
+}
+
+.cardDetailsSpacer {
+  margin-top: 10px;
+}
