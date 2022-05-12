@@ -18,6 +18,10 @@ const config = {
       link: "/",
     },
     {
+      text: "Posts",
+      link: "/posts",
+    },
+    {
       text: "GitHub",
       link: "https://github.com/SoftForgeTeam",
     },

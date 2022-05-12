@@ -24,9 +24,9 @@ export default function Home({ allPosts }) {
       <div className={style.spacerLeft} />
       <Section
         title="Posts"
-        description="Latest posts"
+        description="View more posts on the post page."
       >
-        <Posts posts={allPosts} />
+        <Posts posts={allPosts.slice(0, 6)} />
       </Section>
       <div className={style.spacerLeft} />
       <Section

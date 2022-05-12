@@ -23,7 +23,7 @@ export default function Header() {
         <div className={style.spacer} />
         <div className={style.navigationContainer}>
           {config.links.map((link, index) => (
-            <a className={style.navigation} href={link.link} key={index} target="_blank" rel="noreferrer">
+            <a className={style.navigation} href={link.link} key={index}>
               <h5>{link.text}</h5>
             </a>
           ))}
