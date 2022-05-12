@@ -9,7 +9,7 @@ export default function Navbar(props) {
         {config.site.name}
       </h6>
       {config.links.map((link, index) => (
-        <a className={style.link} href={link.link} key={index} target="_blank" rel="noreferrer">
+        <a className={style.link} href={link.link} key={index}>
           <p className={style.linkItem}>
             {link.text}
           </p>

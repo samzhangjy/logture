@@ -55,3 +55,60 @@ p {
   line-height: 26px;
   margin: 0;
 }
+
+hr {
+  border: 1px solid var(--hover);
+  margin: 30px 0px 30px 0px;
+}
+
+blockquote {
+  border-left: 3px solid var(--primary);
+  padding: 10px 0px 10px 20px;
+  margin: 0px;
+  font-style: italic;
+}
+
+/* Post rendering styles (like Tailwind `prose`) */
+
+.post h1 {
+  margin: 30px 0px 30px 0px;
+}
+
+.post h2 {
+  margin: 25px 0px 25px 0px;
+}
+
+.post h3 {
+  margin: 20px 0px 20px 0px;
+}
+
+.post h4 {
+  margin: 10px 0px 10px 0px;
+}
+
+.post h5 {
+  margin: 8px 0px 8px 0px;
+}
+
+.post p {
+  margin: 8px 0px 8px 0px;
+}
+
+.post li {
+  margin: 10px 0px 10px 3px;
+}
+
+.post .remark-highlight {
+  margin: 20px 0px 20px 0px;
+}
+
+.post pre {
+  border-radius: 0px !important;
+}
+
+.post code {
+  background-color: var(--code);
+  color: var(--code-foreground);
+  padding: 3px 5px 3px 5px;
+  margin: 0px 5px 0px 5px;
+}

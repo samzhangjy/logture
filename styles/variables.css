@@ -21,6 +21,8 @@
     --secondary-light: #4ade80;
     --hover: #eab308;
     --hover-light: #fde047;
+    --code: #e2e8f0;
+    --code-foreground: #1e293b;
   }
 }
 
@@ -36,5 +38,7 @@
     --secondary-light: #4ade80;
     --hover: #facc15;
     --hover-light: #fde047;
+    --code: #1e293b;
+    --code-foreground: #f8fafc;
   }
 }

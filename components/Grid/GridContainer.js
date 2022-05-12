@@ -8,6 +8,7 @@ export default function GridContainer(props) {
       columnGap: props.gap ? props.gap : "0px",
       rowGap: props.rowGap ? props.rowGap : "10px"
     }}
+    className={props.className}
     >
       {props.children}
     </div>

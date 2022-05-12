@@ -24,6 +24,11 @@
   transition: all 0.2s;
 }
 
+.cardTopCover {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .cardCover:hover {
   border-color: var(--hover);
 }
