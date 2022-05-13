@@ -15,6 +15,9 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/logo.png" />
         <link rel="manifest" href="/manifest.json" />
         <link href="https://fonts.googlefonts.cn/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
       </Head>
       <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -9,6 +9,7 @@ import Navbar from "../../components/Navbar";
 import { useScrollTrigger } from "../../hooks";
 import Section from "../../components/Section";
 import Footer from "../../components/Footer";
+import 'highlight.js/styles/github-dark.css'
 
 export default function ViewPost({ post }) {
   const router = useRouter();
@@ -40,6 +41,10 @@ export default function ViewPost({ post }) {
   );
 }
 
+const htmlDecode = (str) => {
+  const arrEntities={'lt':'&lt;','gt':'>','nbsp':' ','amp':'&','quot':'"'};
+  return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
+  }
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
     "title",
@@ -55,7 +60,7 @@ export async function getStaticProps({ params }) {
     props: {
       post: {
         ...post,
-        content,
+        content: htmlDecode(content),
       },
     },
   };
