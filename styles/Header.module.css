@@ -27,8 +27,9 @@
 .navigationContainer {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  width: 300px;
+  width: 400px;
   column-gap: 10px;
+  justify-items: center;
 }
 
 .navigation {

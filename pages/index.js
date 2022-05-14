@@ -11,6 +11,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Posts from "../components/Posts";
 import { getAllPosts } from "../lib/api";
+import CustomSection from "../components/CustomSection";
 
 export default function Home({ allPosts }) {
   const trigger = useScrollTrigger(350);
@@ -28,49 +29,9 @@ export default function Home({ allPosts }) {
       >
         <Posts posts={allPosts.slice(0, 6)} />
       </Section>
-      <div className={style.spacerLeft} />
-      <Section
-        title="Projects"
-        description="Enim dolore occaecat magna in sint eiusmod tempor id."
-      >
-        <GridContainer cols={2} gap="20px">
-          {config.projects.map((project, index) => (
-            <GridCol key={index}>
-              <Card
-                title={project.name}
-                description={project.description}
-                cover={project.avatar}
-              />
-            </GridCol>
-          ))}
-        </GridContainer>
-      </Section>
-      <div className={style.spacerRight} />
-      <Section
-        title="Members"
-        description="Aute dolor et commodo duis officia."
-      >
-        <GridContainer cols={2} gap="20px">
-          {config.members.map((project, index) => (
-            <GridCol key={index}>
-              <Card
-                title={project.nickname}
-                description={project.description}
-                cover={project.avatar}
-                link={project.link}
-              />
-            </GridCol>
-          ))}
-        </GridContainer>
-      </Section>
-      <div className={style.spacerLeft} />
-      <Section title="Join us" description="Veniam exercitation mollit.">
-        <h6
-          dangerouslySetInnerHTML={{
-            __html: config.joinUs.replace("\n", "<br />"),
-          }}
-        ></h6>
-      </Section>
+      {config.custom.map((item, index) => (
+        <CustomSection key={index} {...item} />
+      ))}
       <Footer />
     </div>
   );
