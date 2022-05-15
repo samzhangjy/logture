@@ -1,17 +1,13 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import markdownToHtml from "../../lib/markdownToHtml";
 import {
-  getPostBySlug,
-  getAllPosts,
   getSectionBySlug,
   getAllSections,
 } from "../../lib/api";
 import config from "../../config";
 import Navbar from "../../components/Navbar";
 import { useScrollTrigger } from "../../hooks";
-import Section from "../../components/Section";
 import Footer from "../../components/Footer";
 import "highlight.js/styles/github-dark.css";
 import CustomSection from "../../components/CustomSection";

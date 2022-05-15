@@ -7,7 +7,7 @@ export default function Document() {
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/logo.png" />
-        <meta name="theme-color" content="#4f46e5" />
+        <meta name="theme-color" content="#3b82f6" />
         <meta
           name="description"
           content={config.site.subtitle}
@@ -17,7 +17,7 @@ export default function Document() {
         <link href="https://fonts.googlefonts.cn/css?family=Roboto:300,400,500,700" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googlefonts.cn/css?family=Ubuntu+Mono" rel="stylesheet" />
       </Head>
       <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>

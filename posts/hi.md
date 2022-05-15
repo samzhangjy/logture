@@ -4,7 +4,6 @@ desc: hi.
 cover: /cover.jpg
 date: 2022.05.12
 ---
-# Markdown: Syntax
 
 *   [Overview](#overview)
     *   [Philosophy](#philosophy)

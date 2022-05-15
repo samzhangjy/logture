@@ -12,6 +12,7 @@ export default function Navbar(props) {
       <button
         className={style.navbarToggle}
         onClick={() => setExpanded(!expanded)}
+        aria-label="Toggle navigation pane"
       >
         <IoMenuOutline />
       </button>
