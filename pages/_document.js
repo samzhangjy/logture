@@ -6,13 +6,13 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta charSet="utf-8" />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#3b82f6" />
         <meta
           name="description"
           content={config.site.subtitle}
         />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <link href="https://fonts.googlefonts.cn/css?family=Roboto:300,400,500,700" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
