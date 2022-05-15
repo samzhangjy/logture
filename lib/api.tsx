@@ -5,7 +5,7 @@ import fs from "fs";
 
 const postsDirectory = join(process.cwd(), config.post.folder);
 
-export function getPostBySlug(slug) {
+export function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -19,8 +19,8 @@ export function getPostSlugs() {
 }
 
 export function getAllPosts() {
-  const slugs = getPostSlugs()
-  const posts = slugs
+  var slugs: any = getPostSlugs()
+  var posts: any = slugs
     .map((slug) => getPostBySlug(slug))
     // sort posts by date in descending order
     .sort((post1, post2) => {
