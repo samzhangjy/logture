@@ -99,6 +99,7 @@ const config = {
       newPage: false,
     },
   ],
+  // footer: `Custom footer content.`
 };
 
 export default config;

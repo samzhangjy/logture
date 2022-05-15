@@ -1,11 +1,8 @@
 import Head from "next/head";
-import style from "../styles/Home.module.css";
-import Card from "../components/Card";
+import style from "../styles/Home.module.scss";
 import config from "../config";
 import Header from "../components/Header";
 import Section from "../components/Section";
-import GridContainer from "../components/Grid/GridContainer";
-import GridCol from "../components/Grid/GridCol";
 import { useScrollTrigger } from "../hooks";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";

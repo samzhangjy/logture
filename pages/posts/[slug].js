@@ -4,7 +4,7 @@ import ErrorPage from "next/error";
 import markdownToHtml from "../../lib/markdownToHtml";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import config from "../../config";
-import style from "../../styles/ViewPost.module.css";
+import style from "../../styles/ViewPost.module.scss";
 import Navbar from "../../components/Navbar";
 import { useScrollTrigger } from "../../hooks";
 import Section from "../../components/Section";
@@ -18,7 +18,7 @@ export default function ViewPost({ post }) {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <div>
+    <div className="container">
       <Head>
         <title>
           {post.title} - {config.site.title}
@@ -26,10 +26,8 @@ export default function ViewPost({ post }) {
         <meta name="description" content={post.desc} />
       </Head>
       <Navbar show={trigger} />
-      <div className={style.cover}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={post.cover} className={style.coverImage} alt="" />
-      </div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={post.cover} className={style.coverImage} alt="" />
       <Section title={post.title} description={post.desc} titleLg>
         <div
           dangerouslySetInnerHTML={{ __html: post.content }}

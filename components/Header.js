@@ -1,6 +1,8 @@
 import React from "react";
 import config from "../config";
-import style from "../styles/Header.module.css";
+import style from "../styles/Header.module.scss";
+import GridContainer from "./Grid/GridContainer";
+import GridCol from "./Grid/GridCol";
 
 export default function Header() {
   return (
@@ -15,19 +17,19 @@ export default function Header() {
         })}
       </div>
       <div className={style.titleContainer}>
-        <h1>{config.site.title}</h1>
+        <h1 className={style.title}>{config.site.title}</h1>
         <div className={style.spacer} />
-        <h4 className={style.subtitle}>
-          {config.site.subtitle}
-        </h4>
-        <div className={style.spacer} />
-        <div className={style.navigationContainer}>
+        <h4 className={style.subtitle}>{config.site.subtitle}</h4>
+        <div className={style.spacerSubtitle} />
+        <GridContainer cols={12} className={style.navigationContainer}>
           {config.links.map((link, index) => (
-            <a className={style.navigation} href={link.link} key={index}>
-              <h5>{link.text}</h5>
-            </a>
+            <GridCol key={index} colSpan={12 / config.links.length} md={3} sm={4}>
+              <a className={style.navigation} href={link.link}>
+                <h5 className={style.navigationText}>{link.text}</h5>
+              </a>
+            </GridCol>
           ))}
-        </div>
+        </GridContainer>
       </div>
     </>
   );

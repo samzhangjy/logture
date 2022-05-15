@@ -1,5 +1,4 @@
 import React from "react";
-import { getAllPosts } from "../lib/api";
 import Card from "./Card";
 import GridCol from "./Grid/GridCol";
 import GridContainer from "./Grid/GridContainer";
@@ -7,9 +6,9 @@ import Link from "next/link";
 
 export default function Posts({ posts }) {
   return (
-    <GridContainer cols={3}>
+    <GridContainer cols={12}>
       {posts.map((post, index) => (
-        <GridCol key={index}>
+        <GridCol key={index} colSpan={4} md={6} sm={12}>
           <Link href={`/posts/${encodeURIComponent(post.slug)}`} passHref>
             <a>
               <Card

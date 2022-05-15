@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../styles/Section.module.css";
+import style from "../styles/Section.module.scss";
 
 export default function Section(props) {
   return (

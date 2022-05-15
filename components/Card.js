@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../styles/Card.module.css";
+import style from "../styles/Card.module.scss";
 import GridContainer from "./Grid/GridContainer";
 import GridCol from "./Grid/GridCol";
 
@@ -9,9 +9,9 @@ export default function Project(props) {
   }
   return (
     <div className={style.card} onClick={handleClick}>
-      <GridContainer cols={props.coverTop ? 1 : 4} gap="20px">
+      <GridContainer cols={12} gap="20px">
         {!props.coverTop && (
-          <GridCol>
+          <GridCol colSpan={3}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={props.cover}
@@ -20,7 +20,7 @@ export default function Project(props) {
             />
           </GridCol>
         )}
-        <GridCol colSpan={props.coverTop ? 1 : 3}>
+        <GridCol colSpan={props.coverTop ? 12 : 9}>
           {props.coverTop && (
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}

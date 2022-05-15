@@ -1,9 +1,17 @@
-
+@import "./variables.scss";
 
 .slogan {
   position: absolute;
   right: 30px;
   top: 40px;
+}
+
+.titleContainer {
+  width: 70vw;
+}
+
+.navigationContainer {
+  width: 400px;
 }
 
 .sloganItem {
@@ -13,32 +21,23 @@
 }
 
 .titleContainer {
-  background-color: var(--primary);
+  background-color: $primary;
   color: #fff;
   padding: 50px 20px 20px 20px;
   height: 350px;
-  width: 70vw;
 }
 
-.spacer {
+.spacer,
+.spacerSubtitle {
   margin-top: 20px;
 }
 
-.navigationContainer {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  width: 400px;
-  column-gap: 10px;
-  justify-items: center;
-}
-
 .navigation {
-  grid-column: span 1 / span 1;
   color: #fff;
   transition: all 0.2s;
   text-decoration: none;
   position: relative;
-  color: var(--hover-light);
+  color: $hover-light;
 }
 
 .navigation::after {
@@ -48,13 +47,42 @@
   height: 3px;
   top: 100%;
   left: 0;
-  background: var(--secondary);
+  background: $secondary;
   transition: transform 0.5s;
   transform: scaleX(0);
   transform-origin: right;
 }
-
 .navigation:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+@media screen and (max-width: $break-sm) {
+  .slogan,
+  .sloganItem {
+    display: none !important;
+  }
+
+  .titleContainer {
+    width: 100vw !important;
+  }
+
+  .title {
+    font-size: $heading2;
+  }
+
+  .spacer {
+    margin: 0px;
+  }
+
+  .spacerSubtitle {
+    margin: 15px;
+  }
+
+  .subtitle {
+    font-size: $heading5;
+  }
+
+  .navigationText {
+    font-size: $heading6;
+  }
 }

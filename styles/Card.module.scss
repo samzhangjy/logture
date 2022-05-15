@@ -1,6 +1,8 @@
+@import "./variables.scss";
+
 .card {
   margin-top: 20px;
-  border: 2px solid var(--primary-light);
+  border: 2px solid $primary-light;
   padding: 20px;
   transition: ease-in-out 0.3s;
   height: calc(100% - 64px);
@@ -8,7 +10,7 @@
 
 .card:hover {
   cursor: pointer;
-  box-shadow: 4px 4px 0px var(--primary);
+  box-shadow: 4px 4px 0px $primary;
 }
 
 .card:active {
@@ -18,9 +20,9 @@
 
 .cardCover {
   width: calc(100% - 6px);
-  border: 2px solid var(--secondary);
-  border-left-color: var(--background);
-  border-bottom-color: var(--background);
+  border: 2px solid $secondary;
+  border-left-color: $background;
+  border-bottom-color: $background;
   transition: all 0.2s;
 }
 
@@ -30,7 +32,7 @@
 }
 
 .cardCover:hover {
-  border-color: var(--hover);
+  border-color: $hover;
 }
 
 .cardDetailsSpacer {

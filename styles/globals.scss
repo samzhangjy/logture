@@ -1,0 +1,31 @@
+@import "./variables.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: $background;
+  color: $foreground;
+}
+
+a {
+  color: $foreground;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $background-dark;
+    color: $foreground-dark;
+  }
+
+  a {
+    color: $foreground-dark;
+  }
+}
+
+.container {
+  margin: 0px;
+  padding: 0px;
+  overflow-y: hidden;
+}

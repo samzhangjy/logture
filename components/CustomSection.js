@@ -8,9 +8,9 @@ export default function CustomSection(props) {
   return (
     <Section title={props.name} description={props.description}>
       {typeof props.data === "object" ? (
-        <GridContainer cols={2} gap="20px">
+        <GridContainer cols={12} gap="20px">
           {props.data.map((item, index) => (
-            <GridCol key={index}>
+            <GridCol key={index} colSpan={6} sm={12}>
               <Card
                 title={item.title}
                 description={item.description}

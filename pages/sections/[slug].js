@@ -9,7 +9,6 @@ import {
   getAllSections,
 } from "../../lib/api";
 import config from "../../config";
-import style from "../../styles/ViewPost.module.css";
 import Navbar from "../../components/Navbar";
 import { useScrollTrigger } from "../../hooks";
 import Section from "../../components/Section";
@@ -25,7 +24,7 @@ export default function ViewSection({ section }) {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <div>
+    <div className="container">
       <Head>
         <title>
           {section.name} - {config.site.title}
