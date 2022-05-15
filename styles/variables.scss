@@ -1,3 +1,4 @@
+// Typography variables
 $heading1: 96px;
 $heading2: 60px;
 $heading3: 48px;
@@ -6,11 +7,14 @@ $heading5: 24px;
 $heading6: 20px;
 $body1: 16px;
 $body2: 14px;
+
+// Responsive breakpoints
 $break-sm: 576px;
 $break-md: 768px;
 $break-lg: 1024px;
 $break-xl: 1280px;
 
+// Theme colors
 $white: #ffffff;
 $black: #000000;
 $background: $white;

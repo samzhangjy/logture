@@ -7,6 +7,10 @@
   border-bottom: 4px solid $primary-light;
 }
 
+.footer a {
+  color: $primary;
+}
+
 @media (prefers-color-scheme: dark) {
   .footer {
     background-color: $background-dark;

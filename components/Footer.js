@@ -13,7 +13,21 @@ export default function Footer() {
         />
       )}
       <p className={style.footerSubtitle}>
-        &copy; {new Date().getFullYear()} All rights reserved.
+        &copy; {new Date().getFullYear()} {config.site.owner}.
+        {config.showPoweredBy === undefined || config.showPoweredBy ? (
+          <span>
+            {" "}
+            Powered by{" "}
+            <a
+              href="https://github.com/samzhangjy/logture"
+              rel="noreferrer"
+              target="_blank"
+            >
+              LogTure
+            </a>
+            .
+          </span>
+        ) : null}
       </p>
     </div>
   );

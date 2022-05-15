@@ -1,5 +1,6 @@
 @import "./variables.scss";
 
+// Normalize styles and apply fonts
 body {
   margin: 0;
   padding: 0;
@@ -13,6 +14,14 @@ a {
   text-decoration: none;
 }
 
+// Container to avoid overflow in y-axis
+.container {
+  margin: 0px;
+  padding: 0px;
+  overflow-y: hidden;
+}
+
+// Dark mode
 @media (prefers-color-scheme: dark) {
   body {
     background-color: $background-dark;
@@ -22,10 +31,4 @@ a {
   a {
     color: $foreground-dark;
   }
-}
-
-.container {
-  margin: 0px;
-  padding: 0px;
-  overflow-y: hidden;
 }

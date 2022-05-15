@@ -1,12 +1,12 @@
 {
-    "theme_color": "#3b82f6",
-    "background_color": "#3b82f6",
+    "theme_color": "#6366f1",
+    "background_color": "#6366f1",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "SoftForge",
-    "short_name": "SoftForge",
-    "description": "A team for every coder!",
+    "name": "LogTure",
+    "short_name": "LogTure",
+    "description": "The geek way to blog.",
     "icons": [
         {
             "src": "/icon-192x192.png",

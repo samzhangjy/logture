@@ -14,7 +14,7 @@ export default function Home({ allPosts }) {
   return (
     <div className={`${style.container} scroll`}>
       <Head>
-        <title>{config.site.title}</title>
+        <title>Posts - {config.site.title}</title>
       </Head>
       <Navbar show={trigger} />
       <Header />
