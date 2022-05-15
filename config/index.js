@@ -1,9 +1,9 @@
 const config = {
   site: {
-    name: "SoftForge",
-    title: "SoftForge.",
-    subtitle: "A team for every coder!",
-    slogan: ["Care", "Com", "Code"],
+    name: "LogTure",
+    title: "LogTure.",
+    subtitle: "The geek way to blog.",
+    slogan: ["Eat", "Code", "Sleep"],
   },
   post: {
     folder: "posts",
@@ -33,21 +33,21 @@ const config = {
           title: "Project",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/I-Am-System-32.jpeg",
+          cover: "/assets/avatars/I-Am-System-32.jpeg",
           link: "/",
         },
         {
           title: "Project",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/I-Am-System-32.jpeg",
+          cover: "/assets/avatars/I-Am-System-32.jpeg",
           link: "/",
         },
         {
           title: "Project",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/I-Am-System-32.jpeg",
+          cover: "/assets/avatars/I-Am-System-32.jpeg",
           link: "/",
         },
       ],
@@ -62,26 +62,28 @@ const config = {
           title: "I Am System 32",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/I-Am-System-32.jpeg",
+          cover: "/assets/avatars/I-Am-System-32.jpeg",
           link: "/",
         },
         {
           title: "Command_block",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/command_block.jpeg",
+          cover: "/assets/avatars/command_block.jpeg",
           link: "/",
         },
         {
           title: "montmorillonite",
-          description: "This is a emmm... a fish. Yes, a stone fish()",
-          cover: "/montmorillonite.jpg",
+          description:
+            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
+          cover: "/assets/avatars/montmorillonite.jpg",
           link: "https://github.com/montmorillonite-CN",
         },
         {
           title: "samzhangjy",
-          description: `A teen frontend developer and a Python lover.`,
-          cover: "/samzhangjy.png",
+          description:
+            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
+          cover: "/assets/avatars/samzhangjy.png",
           link: "https://github.com/samzhangjy",
         },
       ],

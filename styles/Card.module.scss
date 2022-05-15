@@ -6,16 +6,16 @@
   padding: 20px;
   transition: ease-in-out 0.3s;
   height: calc(100% - 64px);
-}
 
-.card:hover {
-  cursor: pointer;
-  box-shadow: 4px 4px 0px $primary;
-}
+  &:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 0px $primary;
+  }
 
-.card:active {
-  box-shadow: none;
-  transform: translate(4px, 4px);
+  &:active {
+    box-shadow: none;
+    transform: translate(4px, 4px);
+  }
 }
 
 .cardCover {
@@ -24,15 +24,15 @@
   border-left-color: $background;
   border-bottom-color: $background;
   transition: all 0.2s;
+
+  &:hover {
+    border-color: $hover;
+  }
 }
 
 .cardTopCover {
   width: 100%;
   margin-bottom: 10px;
-}
-
-.cardCover:hover {
-  border-color: $hover;
 }
 
 .cardDetailsSpacer {

@@ -1,9 +1,13 @@
 ---
-title: Hello World
-desc: hi.
-cover: /cover.jpg
+title: Welcome to LogTure
+desc: Hi! Welcome to LogTure, a modern static blog framework built with Nextjs.
+cover: /assets/posts/hi/cover.jpg
 date: 2022.05.12
 ---
+
+This is a markdown rendering sample. Modified from [Markdown Test File](https://github.com/mxstbr/markdown-test-file).
+
+In eiusmod aute amet commodo adipisicing laborum deserunt dolore Lorem velit est do. Cillum velit voluptate amet aliquip non consequat ea reprehenderit. Ea pariatur anim exercitation ipsum sunt irure culpa amet et commodo duis adipisicing.
 
 *   [Overview](#overview)
     *   [Philosophy](#philosophy)
