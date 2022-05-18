@@ -1,0 +1,36 @@
+{
+  "name": "futurejs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "ts": "tsc --noEmit --incremental"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^13.0.1",
+    "markdown-it-highlightjs": "^4.0.1",
+    "next": "12.1.6",
+    "next-pwa": "^5.5.2",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-icons": "^4.3.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@commitlint/travis-cli": "^17.0.0",
+    "@types/markdown-it": "^12.2.3",
+    "@types/react": "^18.0.9",
+    "eslint": "8.15.0",
+    "eslint-config-next": "12.1.6",
+    "husky": "^8.0.0",
+    "sass": "^1.51.0",
+    "typescript": "^4.6.4"
+  }
+}

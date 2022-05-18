@@ -1,0 +1,60 @@
+version: 2
+defaults:
+  working_directory: ~/project
+  docker:
+  - image: circleci/node:latest
+
+jobs:
+  setup:
+    machine:
+      image: ubuntu-2004:current
+    steps:
+      - checkout
+      - restore_cache:
+          key: lock-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn
+      - save_cache:
+          key: lock-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - node_modules
+
+  lint_commit_message:
+    machine:
+      image: ubuntu-2004:current
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Define environment variable with lastest commit's message
+          command: |
+            echo 'export COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")' >> $BASH_ENV
+            source $BASH_ENV
+      - run:
+          name: Lint commit message
+          command: echo "$COMMIT_MESSAGE" | npx commitlint
+  
+  check_typescript_types:
+    machine:
+      image: ubuntu-2004:current
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Validate TypeScript types
+          command: yarn ts
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - setup
+      - lint_commit_message: { requires: [setup] }
+      - check_typescript_types: { requires: [setup] }

@@ -1,0 +1,19 @@
+@import "./variables.scss";
+
+.footer {
+  background-color: $background;
+  color: $foreground;
+  padding: 50px 30px 50px 30px;
+  border-bottom: 4px solid $primary-light;
+}
+
+.footer a {
+  color: $primary;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: $background-dark;
+    color: $foreground-dark;
+  }
+}
