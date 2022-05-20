@@ -25,8 +25,8 @@ const PostsPage: NextPage<PostsPageProps> = ({ allPosts }) => {
       <Header />
       <div className={style.spacerLeft} />
       <Section
-        title="Posts"
-        description="Latest posts"
+        title={config.post.title}
+        description={config.post.description}
         titleLg
       >
         <Posts posts={allPosts} />

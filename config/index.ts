@@ -10,6 +10,9 @@ const config = {
   // post configuration
   post: {
     folder: "posts", // post storage folder
+    title: "Posts",  // post title (displayed on the index page and on the posts page)
+    description: "My blog posts.",  // post description (displayed only on the posts page)
+    indexDescription: "View more posts on the posts page.",  // post description (displayed only on the index page)
   },
   // navbar links configuration
   links: [

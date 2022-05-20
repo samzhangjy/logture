@@ -7,7 +7,7 @@ import { useScrollTrigger } from "../hooks";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Posts from "../components/Posts";
-import { getAllPosts, getAllTags, getPostsByTag, Post } from "../lib/api";
+import { getAllPosts, Post } from "../lib/api";
 import CustomSection from "../components/CustomSection";
 import { GetStaticProps, NextPage } from "next";
 
@@ -27,8 +27,8 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
       <Header />
       <div className={style.spacerLeft} />
       <Section
-        title="Posts"
-        description="View more posts on the post page."
+        title={config.post.title}
+        description={config.post.indexDescription}
       >
         <Posts posts={allPosts.slice(0, 6)} />
       </Section>
