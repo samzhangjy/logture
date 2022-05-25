@@ -116,6 +116,12 @@ blockquote {
   font-family: 'Ubuntu Mono', monospace;
 }
 
+
+.post iframe {
+  width: 100%;
+  min-height: 500px;
+}
+
 @media screen and (max-width: $break-sm) {
   h1 {
     font-size: $heading1-sm;
