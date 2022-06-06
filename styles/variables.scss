@@ -11,7 +11,7 @@ $heading5: 24px;
 $heading5-sm: 20px;
 $heading6: 20px;
 $heading6-sm: 16px;
-$body1: 16px;
+$body1: 18px;
 $body2: 14px;
 
 // Responsive breakpoints
@@ -23,6 +23,7 @@ $break-xl: 1280px;
 // Theme colors
 $white: #ffffff;
 $black: #000000;
+$gray: #1e293b;
 $background: $white;
 $foreground: $black;
 $background-dark: $black;
@@ -35,3 +36,5 @@ $hover: #eab308;
 $hover-light: #fde047;
 $text-secondary: #475569;
 $text-secondary-dark: #94a3b8;
+$code-background: $gray;
+$code-foreground: $white;
