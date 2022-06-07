@@ -53,7 +53,7 @@ p {
   font-size: $body1;
   letter-spacing: 0.1px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 30px;
   margin: 0;
 }
 
@@ -70,57 +70,59 @@ blockquote {
 }
 
 // Post rendering styles (like Tailwind `prose`)
-.post h1 {
-  margin: 30px 0px 30px 0px;
-}
+.post {
+  & h1 {
+    margin: 30px 0px 30px 0px;
+  }
+  & h2 {
+    margin: 25px 0px 25px 0px;
+  }
+  & h3 {
+    margin: 20px 0px 20px 0px;
+  }
+  & h4 {
+    margin: 10px 0px 10px 0px;
+  }
+  & h5 {
+    margin: 8px 0px 8px 0px;
+  }
+  & p {
+    margin: 8px 0px 8px 0px;
+  }
 
-.post h2 {
-  margin: 25px 0px 25px 0px;
-}
+  &li {
+    margin: 10px 0px 10px 3px;
+  }
 
-.post h3 {
-  margin: 20px 0px 20px 0px;
-}
+  & a {
+    color: $primary;
+  }
 
-.post h4 {
-  margin: 10px 0px 10px 0px;
-}
+  & .hljs {
+    margin: 20px 0px 20px 0px;
+  }
 
-.post h5 {
-  margin: 8px 0px 8px 0px;
-}
+  & pre {
+    border-radius: 0px !important;
+  }
 
-.post p {
-  margin: 8px 0px 8px 0px;
-}
+  & code {
+    padding: 3px 5px 3px 5px;
+    font-family: "Ubuntu Mono", monospace;
+    background-color: $code-background;
+    color: $code-foreground;
+  }
 
-.post li {
-  margin: 10px 0px 10px 3px;
-}
+  & iframe {
+    width: 100%;
+    min-height: 500px;
+  }
 
-.post a {
-  color: $primary;
-}
-
-.post .hljs {
-  margin: 20px 0px 20px 0px;
-}
-
-.post pre {
-  border-radius: 0px !important;
-}
-
-.post code {
-  padding: 3px 5px 3px 5px;
-  font-family: 'Ubuntu Mono', monospace;
-  background-color: $code-background;
-  color: $code-foreground;
-}
-
-
-.post iframe {
-  width: 100%;
-  min-height: 500px;
+  & img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: $break-sm) {
