@@ -5,9 +5,9 @@ import GridCol from "./Grid/GridCol";
 import Link from "next/link";
 
 export interface CardProps {
-  cover: string;
+  cover?: string;
   title: string;
-  description: string;
+  description?: string;
   coverTop?: boolean;
   link?: string;
   footer?: string;
@@ -21,65 +21,70 @@ interface CardWrapperProps {
   clickTitle?: boolean;
 }
 
-const CardWrapper: FC<CardWrapperProps> = (props) => {
+const CardWrapper: FC<CardWrapperProps> = ({ clickTitle, children, link }) => {
   return (
     <>
-      {props.clickTitle ? (
-        <>{props.children}</>
+      {clickTitle ? (
+        <>{children}</>
       ) : (
-        <Link href={props.link ? props.link : ""} passHref>
-          <a>{props.children}</a>
+        <Link href={link ? link : ""} passHref>
+          <a>{children}</a>
         </Link>
       )}
     </>
   );
 };
 
-const Card: FC<CardProps> = (props) => {
+const Card: FC<CardProps> = ({
+  cover,
+  coverTop,
+  description,
+  title,
+  activateOnTitle,
+  footer,
+  link,
+  tags,
+}) => {
   return (
-    <CardWrapper clickTitle={props.activateOnTitle} link={props.link}>
-      <div className={props.activateOnTitle ? style.cardActivateOnTitle : style.card}>
+    <CardWrapper clickTitle={activateOnTitle} link={link}>
+      <div className={activateOnTitle ? style.cardActivateOnTitle : style.card}>
         <GridContainer cols={12} gap="20px">
-          {!props.coverTop && (
+          {!coverTop && cover && (
             <GridCol colSpan={3} sm={12}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={props.cover}
-                alt={props.title}
-                className={style.cardCover}
-              />
+              <img src={cover} alt={title} className={style.cardCover} />
             </GridCol>
           )}
-          <GridCol colSpan={props.coverTop ? 12 : 9} sm={12}>
-            {props.coverTop && (
+          <GridCol colSpan={coverTop || !cover ? 12 : 9} sm={12}>
+            {coverTop && cover && (
               <div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={props.cover}
-                  alt={props.title}
-                  className={
-                    props.coverTop ? style.cardTopCover : style.cardCover
-                  }
+                  src={cover}
+                  alt={title}
+                  className={coverTop ? style.cardTopCover : style.cardCover}
                 />
               </div>
             )}
-            {props.activateOnTitle ? (
-              <Link href={props.link ? props.link : ""} passHref>
+            {activateOnTitle ? (
+              <Link href={link ? link : ""} passHref>
                 <a>
-                  <h5 className={style.cardTitleClick}>{props.title}</h5>
+                  <h5 className={style.cardTitleClick}>{title}</h5>
                 </a>
               </Link>
-            ) : <h5 className={style.cardTitle}>{props.title}</h5>}
+            ) : (
+              <h5 className={style.cardTitle}>{title}</h5>
+            )}
             <div className={style.cardDetailsSpacer} />
-            <p className={style.cardDescription}>{props.description}</p>
-            {props.tags?.map((value, index) => (
+            {description && <p className={style.cardDescription}>{description}</p>}
+            {tags?.map((value, index) => (
               <Link href={`/tags/${value}`} key={index} passHref>
                 <a className={style.cardTag}>
                   <span>{value}</span>
                 </a>
               </Link>
             ))}
-            <p className={style.cardFooter}>{props.footer}</p>
+            {footer && <p className={style.cardFooter}>{footer}</p>}
           </GridCol>
         </GridContainer>
       </div>

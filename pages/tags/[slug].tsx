@@ -21,8 +21,8 @@ export interface ViewTagPostsProps {
 const ViewTagPosts: NextPage<ViewTagPostsProps> = ({ tag, posts }) => {
   const router = useRouter();
   const trigger = useScrollTrigger(150);
-  const title = getFormattedText(config.tag.title, "tag", tag);
-  const description = getFormattedText(config.tag.description, "tag", tag);
+  const title = getFormattedText(config.tags.title, "tag", tag);
+  const description = getFormattedText(config.tags.description, "tag", tag);
   if (!router.isFallback && !tag) {
     return <ErrorPage statusCode={404} />;
   }

@@ -64,7 +64,7 @@ export const getAllTags = () => {
   const posts = getAllPosts();
   const tags = posts
     .reduce((l, r) => l.concat(r.tags), [])
-  return tags;
+  return tags.filter((item, pos) => tags.indexOf(item) === pos)
 }
 
 export const getPostsByTag = (tag: string) => {
