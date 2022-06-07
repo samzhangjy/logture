@@ -50,6 +50,7 @@
     transition: transform 0.5s;
     transform: scaleX(0);
     transform-origin: right;
+    margin-top: 5px;
   }
 
   & .navigationText {
@@ -60,7 +61,6 @@
   &:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-    margin-top: 5px;
   }
 }
 
