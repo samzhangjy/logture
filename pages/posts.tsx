@@ -19,7 +19,8 @@ const PostsPage: NextPage<PostsPageProps> = ({ allPosts }) => {
   return (
     <div className={`${style.container} scroll`}>
       <Head>
-        <title>Posts - {config.site.title}</title>
+        <title>{config.post.title} - {config.site.title}</title>
+        <meta name="description" content={config.post.description} />
       </Head>
       <Navbar show={trigger} />
       <Header />

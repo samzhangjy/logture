@@ -14,6 +14,12 @@ const config = {
     description: "My blog posts.",  // post description (displayed only on the posts page)
     indexDescription: "View more posts on the posts page.",  // post description (displayed only on the index page)
   },
+  // tag configuration
+  tag: {
+    // {{tag}} is the template string format in LogTure used to inject variables into the current string template
+    description: "Posts tagged with tag {{tag}}.",  // tag description (displayed only on the tag page)
+    title: "Tag {{tag}}",  // tag title (displayed on the tag page)
+  },
   // navbar links configuration
   links: [
     {

@@ -1,23 +1,17 @@
+import "highlight.js/styles/github-dark.css";
+import { GetStaticProps, NextPage } from "next";
+import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import {
-  getSectionBySlug,
-  getAllSections,
-  Post,
-  getPostsByTag,
-  getAllTags,
-} from "../../lib/api";
-import config from "../../config";
-import Navbar from "../../components/Navbar";
-import { useScrollTrigger } from "../../hooks";
 import Footer from "../../components/Footer";
-import "highlight.js/styles/github-dark.css";
-import CustomSection from "../../components/CustomSection";
 import Header from "../../components/Header";
-import { GetStaticProps, NextPage } from "next";
+import Navbar from "../../components/Navbar";
 import Posts from "../../components/Posts";
 import Section from "../../components/Section";
+import config from "../../config";
+import { useScrollTrigger } from "../../hooks";
+import { getAllTags, getPostsByTag, Post } from "../../lib/api";
+import { getFormattedText } from "../../lib/formatTemplate";
 
 export interface ViewTagPostsProps {
   posts: Post[];
@@ -27,25 +21,30 @@ export interface ViewTagPostsProps {
 const ViewTagPosts: NextPage<ViewTagPostsProps> = ({ tag, posts }) => {
   const router = useRouter();
   const trigger = useScrollTrigger(150);
+  const title = getFormattedText(config.tag.title, "tag", tag);
+  const description = getFormattedText(config.tag.description, "tag", tag);
   if (!router.isFallback && !tag) {
     return <ErrorPage statusCode={404} />;
   }
+
   return (
     <div className="container">
       <Head>
         <title>
-          Tag {tag} - {config.site.title}
+          {title} - {config.site.title}
         </title>
-        <meta name="description" content={`Posts for tag ${tag}`} />
+        <meta name="description" content={description} />
       </Head>
       <Navbar show={trigger} />
       <Header />
       <Section
-        title={`Tag ${tag}`}
+        title={title}
         description={
-          <span>
-            All posts for tag <code>{tag}</code>.
-          </span>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: description,
+            }}
+          />
         }
       >
         <Posts posts={posts} />
