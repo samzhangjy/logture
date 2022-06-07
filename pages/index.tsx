@@ -33,7 +33,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
         <Posts posts={allPosts.slice(0, 6)} />
       </Section>
       {config.custom.map((item, index) => (
-        <CustomSection key={index} {...item} />
+        (item.showOnIndex ?? true) && <CustomSection key={index} {...item} />
       ))}
       <Footer />
     </div>

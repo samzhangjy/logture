@@ -68,6 +68,7 @@ const config = {
       description: "A list of projects", // section description
       slug: "projects", // section slug, needed if the creation of a new page containing only this section is needed
       newPage: true, // weather to create a single page under `/sections/[slug]` or not
+      showOnIndex: false,  // weather to show the current section on the index page or not
     },
     {
       data: [
