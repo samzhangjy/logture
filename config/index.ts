@@ -13,6 +13,8 @@ const config = {
     title: "Posts",  // post title (displayed on the index page and on the posts page)
     description: "My blog posts.",  // post description (displayed only on the posts page)
     indexDescription: "View more posts on the posts page.",  // post description (displayed only on the index page)
+    readMore: "Read more", // read more text on the index page
+    postsToDisplay: 6, // number of posts to display on the index page
   },
   // tag configuration
   tags: {

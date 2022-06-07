@@ -23,6 +23,26 @@
   right: 0px;
 }
 
+.readMore {
+  text-align: center;
+  padding: 15px;
+  background-color: $primary;
+  transition: all 0.3s;
+  color: $white;
+
+  &:hover {
+    background-color: $hover;
+    box-shadow: 5px 5px 0px $secondary;
+    color: $foreground;
+    cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translate(5px, 5px);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .container {
     color: $foreground-dark;

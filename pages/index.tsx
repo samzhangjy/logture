@@ -10,6 +10,7 @@ import Posts from "../components/Posts";
 import { getAllPosts, Post } from "../lib/api";
 import CustomSection from "../components/CustomSection";
 import { GetStaticProps, NextPage } from "next";
+import Link from "next/link";
 
 export interface HomeProps {
   allPosts: Post[];
@@ -30,15 +31,21 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
         title={config.post.title}
         description={config.post.indexDescription}
       >
-        <Posts posts={allPosts.slice(0, 6)} />
+        <Posts posts={allPosts.slice(0, config.post.postsToDisplay)} />
+        {allPosts.length > config.post.postsToDisplay && (
+          <Link href="/posts">
+            <div  className={style.readMore}>{config.post.readMore}</div>
+          </Link>
+        )}
       </Section>
-      {config.custom.map((item, index) => (
-        (item.showOnIndex ?? true) && <CustomSection key={index} {...item} />
-      ))}
+      {config.custom.map(
+        (item, index) =>
+          (item.showOnIndex ?? true) && <CustomSection key={index} {...item} />
+      )}
       <Footer />
     </div>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPosts = getAllPosts();
@@ -46,6 +53,6 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: { allPosts },
   };
-}
+};
 
 export default Home;
