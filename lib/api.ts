@@ -13,6 +13,7 @@ export interface Post {
   cover: string;
   date: string;
   tags: string[];
+  visible: boolean | undefined;
 }
 
 export const getPostBySlug = (slug: string) => {
@@ -28,6 +29,7 @@ export const getPostBySlug = (slug: string) => {
     cover: data.cover,
     date: data.date,
     tags: data.tags,
+    visible: data.visible === undefined ? true : data.visible,
     content,
   };
 }
@@ -69,11 +71,11 @@ export const getAllTags = () => {
 
 export const getPostsByTag = (tag: string) => {
   const posts = getAllPosts();
-  const posts_tag: Post[] = [];
+  const postsTag: Post[] = [];
   for (var i = 0; i < posts.length; i++) {
     if (posts[i].tags.includes(tag)) {
-      posts_tag.push(posts[i]);
+      postsTag.push(posts[i]);
     }
   }
-  return posts_tag;
+  return postsTag;
 }
