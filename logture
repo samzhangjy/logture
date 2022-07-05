@@ -1,0 +1,122 @@
+#!/bin/bash
+
+# address defaults to HTTPS
+CLONE_ADDRESS="https://github.com/samzhangjy/logture.git"
+POSTS_FOLDER="./posts"
+CONFIG_FILE="./config.ts"
+BUILD_OUTPUT="./build-output"
+IS_DEBUG=0
+LOGTURE_CONFIG=".logtureconfig"
+
+die() { echo "$*" >&2; exit 2; }
+
+needs_arg() {
+  if [ -z "$OPTARG" ]; then
+    die "No arg for --$OPT option";
+  fi;
+}
+
+help() {
+  echo -e "LogTure deploy helper.\n"
+  echo "Usage:"
+  echo "  logture build [<flags>]"
+  echo "  logture deploy [<push-url>]"
+  echo ""
+  echo "Options:"
+  echo "  -h, --help               Show this screen."
+  echo "  -v, --version            Show CLI version."
+  echo "  --ssh                    Use ssh to clone LogTure source."
+  echo "  --https                  Use HTTPS to clone LogTure source."
+  echo "  --debug                  Turn on debug mode for this CLI."
+  echo "  --posts-folder=<loc>     Sepecify the post folder."
+  echo "  --build-output=<loc>     Sepecify the output folder."
+  echo "  --config-file=<loc>      Sepecify the LogTure posts configuration file."
+}
+
+version() {
+  echo "LogTure CLI Helper v0.0.1"
+}
+
+banner() {
+  echo -e "    __               ______
+   / /   ____  ____ /_  __/_  __________
+  / /   / __ \\\\/ __ \`// / / / / / ___/ _ \\
+ / /___/ /_/ / /_/ // / / /_/ / /  /  __/
+/_____/\\____/\\__, //_/  \\__,_/_/   \\___/
+            /____/                                 "
+  echo -e "\nPowered by LogTure CLI Helper v0.0.1\n"
+}
+
+while getopts ":vh-:" OPT; do
+  if [ "$OPT" = "-" ]; then
+    OPT="${OPTARG%%=*}"
+    OPTARG="${OPTARG#$OPT}"
+    OPTARG="${OPTARG#=}"
+  fi
+  case "$OPT" in
+    h | help )  help; exit 0 ;;
+    v | version ) version; exit 0 ;;
+    ssh )  CLONE_ADDRESS="git@github.com:samzhangjy/logture.git" ;;
+    https )  CLONE_ADDRESS="https://github.com/samzhangjy/logture.git" ;;
+    debug )  IS_DEBUG=1 ;;
+    posts-folder )  POSTS_FOLDER="$OPTARG" ;;
+    build-output )  BUILD_OUTPUT="$OPTARG" ;;
+    config-file ) CONFIG_FILE="$OPTARG" ;;
+    ??* )   die "Illedgal option --$OPT" ;;
+    ? )     exit 2 ;;
+  esac
+done
+shift $((OPTIND-1))
+
+banner
+
+if [ -z "$1" ]; then
+  die "No command given. Type --help to see a list of commands."
+fi
+
+if [ $1 = "build" ]; then
+  echo "Cloning latest LogTure release from GitHub..."
+  rm -rf $BUILD_OUTPUT
+  if [ $IS_DEBUG -eq 0 ]; then
+    git clone $CLONE_ADDRESS $BUILD_OUTPUT --quiet
+  else
+    git clone $CLONE_ADDRESS $BUILD_OUTPUT
+  fi
+
+  if ! [ $? -eq 0 ]; then
+    die "Failed to clone. Use --debug to see execute details."
+  fi
+
+  echo "Copying files to LogTure source..."
+  rm -rf $BUILD_OUTPUT/posts
+  rm $BUILD_OUTPUT/config/index.ts
+  cp -r $POSTS_FOLDER $BUILD_OUTPUT/posts
+  if ! [ $? -eq 0 ]; then
+    die "Failed to copy posts from given path. Please check if the folder exists."
+  fi
+  cp $CONFIG_FILE $BUILD_OUTPUT/config/index.ts
+  if ! [ $? -eq 0 ]; then
+    die "Failed to copy configuration file from given path. Please check if the file exists."
+  fi
+
+  echo "Done!"
+elif [ $1 = "deploy" ]; then
+  PUSH_URL=`grep -i "^PUSH_URL=" $LOGTURE_CONFIG | { grep -v grep || true; } | cut -c10-`
+  if ! [ -z "$2" ]; then
+    PUSH_URL=$2
+  fi
+  if [ -z $PUSH_URL ]; then
+    die "No push URL given. Please create a $LOGTURE_CONFIG file and specify a path."
+  fi
+  echo "Deploying your blog to repository $PUSH_URL..."
+  cd $BUILD_OUTPUT
+  if ! [ $? -eq 0 ]; then
+    die "No build output found. Please run the build command first."
+  fi
+  git init --quiet
+  git add .
+  git commit -m "Automatic commit by LogTure CLI" --quiet
+  git branch -M main --quiet
+  git push --force --quiet $PUSH_URL main
+  echo "Done!"
+fi
