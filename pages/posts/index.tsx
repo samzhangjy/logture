@@ -1,13 +1,13 @@
 import Head from "next/head";
-import style from "../styles/Home.module.scss";
-import config from "../config";
-import Header from "../components/Header";
-import Section from "../components/Section";
-import { useScrollTrigger } from "../hooks";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Posts from "../components/Posts";
-import { getAllPosts, Post } from "../lib/api";
+import style from "../../styles/Home.module.scss";
+import config from "../../config";
+import Header from "../../components/Header";
+import Section from "../../components/Section";
+import { useScrollTrigger } from "../../hooks";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import Posts from "../../components/Posts";
+import { getAllPosts, Post } from "../../lib/api";
 import { GetStaticProps, NextPage } from "next";
 
 export interface PostsPageProps {

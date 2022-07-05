@@ -1,6 +1,6 @@
-import matter from 'gray-matter';
-import config from '../config';
-import { join } from 'path';
+import matter from "gray-matter";
+import config from "../config";
+import { join } from "path";
 import fs from "fs";
 
 const postsDirectory = join(process.cwd(), config.post.folder);
@@ -17,9 +17,9 @@ export interface Post {
 }
 
 export const getPostBySlug = (slug: string) => {
-  const realSlug = slug.replace(/\.md$/, '');
+  const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   return {
@@ -32,23 +32,30 @@ export const getPostBySlug = (slug: string) => {
     visible: data.visible === undefined ? true : data.visible,
     content,
   };
-}
+};
 
 export const getPostSlugs = () => {
-  return fs.readdirSync(postsDirectory)
-}
+  return fs.readdirSync(postsDirectory);
+};
 
 export const getAllPosts = () => {
-  const slugs = getPostSlugs()
-  const posts = slugs
+  const slugs = getPostSlugs();
+  const posts: Post[] = slugs
     .map((slug) => getPostBySlug(slug))
     // sort posts by date in descending order
     .sort((post1, post2) => {
-      if (post1.date && post2.date) return post1.date > post2.date ? -1 : 1
-      return -1
-    })
-  return posts
-}
+      if (post1.date && post2.date) return post1.date > post2.date ? -1 : 1;
+      return -1;
+    });
+  return posts;
+};
+
+export const getVisiblePosts = () => {
+  const posts = getAllPosts().filter(
+    (value) => value.visible === undefined || value.visible
+  );
+  return posts;
+};
 
 export const getSectionBySlug = (slug: string) => {
   for (var i = 0; i < config.custom.length; i++) {
@@ -56,26 +63,23 @@ export const getSectionBySlug = (slug: string) => {
       return config.custom[i];
     }
   }
-}
+};
 
 export const getAllSections = () => {
   return config.custom;
-}
+};
 
 export const getAllTags = () => {
   const posts = getAllPosts();
-  const tags = posts
-    .reduce((l, r) => l.concat(r.tags), [])
-  return tags.filter((item, pos) => tags.indexOf(item) === pos)
-}
+  const tags = posts.reduce((l, r) => l.concat(r.tags as never[]), []);
+  return tags.filter((item, pos) => tags.indexOf(item) === pos);
+};
 
 export const getPostsByTag = (tag: string) => {
   const posts = getAllPosts();
-  const postsTag: Post[] = [];
-  for (var i = 0; i < posts.length; i++) {
-    if (posts[i].tags.includes(tag)) {
-      postsTag.push(posts[i]);
-    }
-  }
+  const postsTag: Post[] = posts.filter(
+    (post) =>
+      post.tags.includes(tag) && (post.visible === undefined || post.visible)
+  );
   return postsTag;
-}
+};

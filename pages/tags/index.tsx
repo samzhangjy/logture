@@ -1,16 +1,16 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
-import GridCol from "../components/Grid/GridCol";
-import GridContainer from "../components/Grid/GridContainer";
-import Header from "../components/Header";
-import Navbar from "../components/Navbar";
-import Section from "../components/Section";
-import config from "../config";
-import { useScrollTrigger } from "../hooks";
-import { getAllTags, getPostsByTag } from "../lib/api";
-import { getFormattedText } from "../lib/formatTemplate";
+import Card from "../../components/Card";
+import Footer from "../../components/Footer";
+import GridCol from "../../components/Grid/GridCol";
+import GridContainer from "../../components/Grid/GridContainer";
+import Header from "../../components/Header";
+import Navbar from "../../components/Navbar";
+import Section from "../../components/Section";
+import config from "../../config";
+import { useScrollTrigger } from "../../hooks";
+import { getAllTags, getPostsByTag } from "../../lib/api";
+import { getFormattedText } from "../../lib/formatTemplate";
 
 export interface Tag {
   name: string;
@@ -52,11 +52,12 @@ const ViewTags: NextPage<ViewTagsProps> = ({ tags }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const tag_names = getAllTags();
-  const tags = tag_names.map((tag) => ({
-    name: tag,
-    count: getPostsByTag(tag).length,
-  }));
+  const tagNames = getAllTags();
+  const tags = tagNames
+    .map((tag) => ({
+      name: tag,
+      count: getPostsByTag(tag).length,
+    }));
   return {
     props: { tags },
   };

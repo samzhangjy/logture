@@ -7,7 +7,7 @@ import { useScrollTrigger } from "../hooks";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Posts from "../components/Posts";
-import { getAllPosts, Post } from "../lib/api";
+import { getVisiblePosts, Post } from "../lib/api";
 import CustomSection from "../components/CustomSection";
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
@@ -48,7 +48,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPosts = getAllPosts();
+  const allPosts = getVisiblePosts();
 
   return {
     props: { allPosts },

@@ -15,6 +15,7 @@ const config = {
     indexDescription: "View more posts on the posts page.",  // post description (displayed only on the index page)
     readMore: "Read more", // read more text on the index page
     postsToDisplay: 6, // number of posts to display on the index page
+    noPostText: "No posts yet.",  // text to display when no posts exist for the current section
   },
   // tag configuration
   tags: {
