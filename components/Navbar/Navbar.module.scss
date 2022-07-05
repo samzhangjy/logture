@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "styles/variables.scss";
 
 .navbarContainer {
   transition: 0.5s;
@@ -22,7 +22,6 @@
 
 .navbarHide {
   transition: all 0.5s;
-  /* display: none; */
   opacity: 0%;
   position: absolute;
   color: $white;
@@ -34,7 +33,7 @@
   color: $white;
   text-decoration: none;
   transition: all 0.3s;
-  
+
   &:hover {
     background-color: $hover;
     color: $black;

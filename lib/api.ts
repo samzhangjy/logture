@@ -1,7 +1,7 @@
-import matter from "gray-matter";
-import config from "../config";
-import { join } from "path";
+import config from "config";
 import fs from "fs";
+import matter from "gray-matter";
+import { join } from "path";
 
 const postsDirectory = join(process.cwd(), config.post.folder);
 

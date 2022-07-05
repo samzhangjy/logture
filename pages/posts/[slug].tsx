@@ -1,16 +1,16 @@
+import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/Navbar/Navbar";
+import Section from "@/components/Section/Section";
+import { getAllPosts, getPostBySlug, Post } from "@/lib/api";
+import markdownToHtml from "@/lib/markdownToHtml";
+import style from "@/styles/ViewPost.module.scss";
+import config from "config";
+import "highlight.js/styles/github-dark.css";
+import { useScrollTrigger } from "hooks";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import markdownToHtml from "../../lib/markdownToHtml";
-import { getPostBySlug, getAllPosts, Post } from "../../lib/api";
-import config from "../../config";
-import style from "../../styles/ViewPost.module.scss";
-import Navbar from "../../components/Navbar";
-import { useScrollTrigger } from "../../hooks";
-import Section from "../../components/Section";
-import Footer from "../../components/Footer";
-import "highlight.js/styles/github-dark.css";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
 export interface PostProps {
   post: Post;
@@ -46,9 +46,9 @@ const ViewPost: NextPage<PostProps> = ({ post }) => {
       <Footer />
     </div>
   );
-}
+};
 
-export const getStaticProps: GetStaticProps = async({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   let slug = "";
   if (params && typeof params.slug === "object") slug = params.slug[0];
   else if (params && typeof params.slug === "string") slug = params.slug;
@@ -63,7 +63,7 @@ export const getStaticProps: GetStaticProps = async({ params }) => {
       },
     },
   };
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = getAllPosts();
@@ -78,6 +78,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }),
     fallback: false,
   };
-}
+};
 
 export default ViewPost;

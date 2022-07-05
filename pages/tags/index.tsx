@@ -1,16 +1,16 @@
+import Card from "@/components/Card/Card";
+import Footer from "@/components/Footer/Footer";
+import GridCol from "@/components/Grid/GridCol";
+import GridContainer from "@/components/Grid/GridContainer";
+import Header from "@/components/Header/Header";
+import Navbar from "@/components/Navbar/Navbar";
+import Section from "@/components/Section/Section";
+import { getAllTags, getPostsByTag } from "@/lib/api";
+import { getFormattedText } from "@/lib/formatTemplate";
+import config from "config";
+import { useScrollTrigger } from "hooks";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import Card from "../../components/Card";
-import Footer from "../../components/Footer";
-import GridCol from "../../components/Grid/GridCol";
-import GridContainer from "../../components/Grid/GridContainer";
-import Header from "../../components/Header";
-import Navbar from "../../components/Navbar";
-import Section from "../../components/Section";
-import config from "../../config";
-import { useScrollTrigger } from "../../hooks";
-import { getAllTags, getPostsByTag } from "../../lib/api";
-import { getFormattedText } from "../../lib/formatTemplate";
 
 export interface Tag {
   name: string;
@@ -33,13 +33,20 @@ const ViewTags: NextPage<ViewTagsProps> = ({ tags }) => {
       </Head>
       <Navbar show={trigger} />
       <Header />
-      <Section title={config.tags.allTags.title} description={config.tags.allTags.description}>
+      <Section
+        title={config.tags.allTags.title}
+        description={config.tags.allTags.description}
+      >
         <GridContainer cols={12}>
           {tags.map((tag, index) => (
             <GridCol key={index} colSpan={4} md={6} sm={12}>
               <Card
                 title={tag.name}
-                description={getFormattedText(config.tags.allTags.postCount, "count", '' + tag.count)}
+                description={getFormattedText(
+                  config.tags.allTags.postCount,
+                  "count",
+                  "" + tag.count
+                )}
                 link={`/tags/${tag.name}`}
               />
             </GridCol>
@@ -53,11 +60,10 @@ const ViewTags: NextPage<ViewTagsProps> = ({ tags }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const tagNames = getAllTags();
-  const tags = tagNames
-    .map((tag) => ({
-      name: tag,
-      count: getPostsByTag(tag).length,
-    }));
+  const tags = tagNames.map((tag) => ({
+    name: tag,
+    count: getPostsByTag(tag).length,
+  }));
   return {
     props: { tags },
   };

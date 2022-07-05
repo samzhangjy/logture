@@ -1,16 +1,15 @@
-import Head from "next/head";
-import style from "../styles/Home.module.scss";
-import config from "../config";
-import Header from "../components/Header";
-import Section from "../components/Section";
-import { useScrollTrigger } from "../hooks";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Posts from "../components/Posts";
-import { getVisiblePosts, Post } from "../lib/api";
-import CustomSection from "../components/CustomSection";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import Navbar from "@/components/Navbar/Navbar";
+import Posts from "@/components/Posts/Posts";
+import { CustomSection, Section } from "@/components/Section";
+import { getVisiblePosts, Post } from "@/lib/api";
+import style from "@/styles/Home.module.scss";
+import config from "config";
 import { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import Link from "next/link";
+import { useScrollTrigger } from "../hooks";
 
 export interface HomeProps {
   allPosts: Post[];
@@ -34,7 +33,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
         <Posts posts={allPosts.slice(0, config.post.postsToDisplay)} />
         {allPosts.length > config.post.postsToDisplay && (
           <Link href="/posts">
-            <div  className={style.readMore}>{config.post.readMore}</div>
+            <div className={style.readMore}>{config.post.readMore}</div>
           </Link>
         )}
       </Section>

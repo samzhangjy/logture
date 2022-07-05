@@ -10,24 +10,24 @@ const config = {
   // post configuration
   post: {
     folder: "posts", // post storage folder
-    title: "Posts",  // post title (displayed on the index page and on the posts page)
-    description: "My blog posts.",  // post description (displayed only on the posts page)
-    indexDescription: "View more posts on the posts page.",  // post description (displayed only on the index page)
+    title: "Posts", // post title (displayed on the index page and on the posts page)
+    description: "My blog posts.", // post description (displayed only on the posts page)
+    indexDescription: "View more posts on the posts page.", // post description (displayed only on the index page)
     readMore: "Read more", // read more text on the index page
     postsToDisplay: 6, // number of posts to display on the index page
-    noPostText: "No posts yet.",  // text to display when no posts exist for the current section
+    noPostText: "No posts yet.", // text to display when no posts exist for the current section
   },
   // tag configuration
   tags: {
     // {{tag}} is the template string format in LogTure used to inject variables into the current string template
-    description: "Posts tagged with tag {{tag}}.",  // tag description (displayed only on the tag page)
-    title: "Tag {{tag}}",  // tag title (displayed on the tag page)
+    description: "Posts tagged with tag {{tag}}.", // tag description (displayed only on the tag page)
+    title: "Tag {{tag}}", // tag title (displayed on the tag page)
     // configuration for the `all tags` page
     allTags: {
-      title: "Tags",  // title (displayed on the all tags page)
-      description: "All tags",  // description (displayed only on the all tags page)
-      postCount: "{{count}} posts",  // post count description (displayed on the all tags page)
-    }
+      title: "Tags", // title (displayed on the all tags page)
+      description: "All tags", // description (displayed only on the all tags page)
+      postCount: "{{count}} posts", // post count description (displayed on the all tags page)
+    },
   },
   // navbar links configuration
   links: [
@@ -65,21 +65,28 @@ const config = {
           // card description
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/assets/avatars/I-Am-System-32.jpeg", // card cover, shown on the left of card description
+          cover: "https://avatars.dicebear.com/api/miniavs/weilai.svg", // card cover, shown on the left of card description
           link: "/", // the link to navigate to when clicking on the card
         },
         {
           title: "Project",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/assets/avatars/I-Am-System-32.jpeg",
+          cover: "https://avatars.dicebear.com/api/miniavs/weilai.svg",
           link: "/",
         },
         {
           title: "Project",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/assets/avatars/I-Am-System-32.jpeg",
+          cover: "https://avatars.dicebear.com/api/miniavs/weilai.svg",
+          link: "/",
+        },
+        {
+          title: "Project",
+          description:
+            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
+          cover: "https://avatars.dicebear.com/api/miniavs/weilai.svg",
           link: "/",
         },
       ],
@@ -87,37 +94,37 @@ const config = {
       description: "A list of projects", // section description
       slug: "projects", // section slug, needed if the creation of a new page containing only this section is needed
       newPage: true, // weather to create a single page under `/sections/[slug]` or not
-      showOnIndex: false,  // weather to show the current section on the index page or not
+      showOnIndex: false, // weather to show the current section on the index page or not
     },
     {
       data: [
         {
-          title: "I Am System 32",
+          title: "John Doe",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/assets/avatars/I-Am-System-32.jpeg",
+          cover: "https://avatars.dicebear.com/api/miniavs/gfwl.svg",
           link: "/",
         },
         {
-          title: "Command_block",
+          title: "John Doe",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/assets/avatars/command_block.jpeg",
+          cover: "https://avatars.dicebear.com/api/miniavs/gfwl.svg",
           link: "/",
         },
         {
-          title: "montmorillonite",
+          title: "John Doe",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/assets/avatars/montmorillonite.jpg",
-          link: "https://github.com/montmorillonite-CN",
+          cover: "https://avatars.dicebear.com/api/miniavs/gfwl.svg",
+          link: "/",
         },
         {
-          title: "samzhangjy",
+          title: "John Doe",
           description:
             "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "/assets/avatars/samzhangjy.png",
-          link: "https://github.com/samzhangjy",
+          cover: "https://avatars.dicebear.com/api/miniavs/gfwl.svg",
+          link: "/",
         },
       ],
       name: "Members",

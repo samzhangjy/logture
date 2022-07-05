@@ -1,18 +1,15 @@
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import Navbar from "@/components/Navbar/Navbar";
+import { CustomSection } from "@/components/Section";
+import config from "config";
+import "highlight.js/styles/github-dark.css";
+import { useScrollTrigger } from "hooks";
+import { getAllSections, getSectionBySlug } from "lib/api";
+import { GetStaticProps, NextPage } from "next";
+import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import {
-  getSectionBySlug,
-  getAllSections,
-} from "../../lib/api";
-import config from "../../config";
-import Navbar from "../../components/Navbar";
-import { useScrollTrigger } from "../../hooks";
-import Footer from "../../components/Footer";
-import "highlight.js/styles/github-dark.css";
-import CustomSection from "../../components/CustomSection";
-import Header from "../../components/Header";
-import { GetStaticProps, NextPage } from "next";
 
 export interface SectionDataItem {
   title: string;
@@ -61,7 +58,7 @@ const ViewSection: NextPage<ViewSectionProps> = ({ section }) => {
       <Footer />
     </div>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
   let slug = "";
@@ -72,7 +69,7 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
   return {
     props: { section },
   };
-}
+};
 
 export async function getStaticPaths() {
   const sections = getAllSections();

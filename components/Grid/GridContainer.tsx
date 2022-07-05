@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 export interface GridContainerProps {
   cols: number;
@@ -18,10 +18,8 @@ const GridContainer: FC<GridContainerProps> = (props) => {
   if (props.lg) gridClass += `_lg-${props.lg}`;
   if (props.xl) gridClass += `_xl-${props.xl}`;
   return (
-    <div className={`${gridClass} ${props.className}`}>
-      {props.children}
-    </div>
+    <div className={`${gridClass} ${props.className}`}>{props.children}</div>
   );
-}
+};
 
 export default GridContainer;

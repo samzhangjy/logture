@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import style from "../styles/Section.module.scss";
+import { FC } from "react";
+import style from "./Section.module.scss";
 
 export interface SectionProps {
   title: string;
@@ -25,6 +25,6 @@ const Section: FC<SectionProps> = (props) => {
       <div className={style.sectionContent}>{props.children}</div>
     </div>
   );
-}
+};
 
 export default Section;

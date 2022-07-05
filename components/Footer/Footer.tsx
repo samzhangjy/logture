@@ -1,8 +1,8 @@
-import React from "react";
-import style from "../styles/Footer.module.scss";
-import config from "../config";
+import config from "config";
+import style from "./Footer.module.scss";
+import { FC } from "react";
 
-export default function Footer() {
+const Footer: FC = () => {
   return (
     <div className={style.footer}>
       <h5 className={style.footerTitle}>{config.site.title}</h5>
@@ -31,4 +31,6 @@ export default function Footer() {
       </p>
     </div>
   );
-}
+};
+
+export default Footer;

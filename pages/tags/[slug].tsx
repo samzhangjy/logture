@@ -1,17 +1,17 @@
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import Navbar from "@/components/Navbar/Navbar";
+import Posts from "@/components/Posts/Posts";
+import Section from "@/components/Section/Section";
+import { getAllTags, getPostsByTag, Post } from "@/lib/api";
+import { getFormattedText } from "@/lib/formatTemplate";
+import config from "config";
 import "highlight.js/styles/github-dark.css";
+import { useScrollTrigger } from "hooks";
 import { GetStaticProps, NextPage } from "next";
 import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import Navbar from "../../components/Navbar";
-import Posts from "../../components/Posts";
-import Section from "../../components/Section";
-import config from "../../config";
-import { useScrollTrigger } from "../../hooks";
-import { getAllTags, getPostsByTag, Post } from "../../lib/api";
-import { getFormattedText } from "../../lib/formatTemplate";
 
 export interface ViewTagPostsProps {
   posts: Post[];

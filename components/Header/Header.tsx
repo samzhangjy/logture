@@ -1,8 +1,5 @@
-import React from "react";
-import config from "../config";
-import style from "../styles/Header.module.scss";
-import GridContainer from "./Grid/GridContainer";
-import GridCol from "./Grid/GridCol";
+import config from "config";
+import style from "./Header.module.scss";
 
 export default function Header() {
   return (
@@ -23,9 +20,9 @@ export default function Header() {
         <div className={style.spacerSubtitle} />
         <div className={style.navigationContainer}>
           {config.links.map((link, index) => (
-              <a className={style.navigation} href={link.link} key={index}>
-                <h5 className={style.navigationText}>{link.text}</h5>
-              </a>
+            <a className={style.navigation} href={link.link} key={index}>
+              <h5 className={style.navigationText}>{link.text}</h5>
+            </a>
             // </GridCol>
           ))}
         </div>
@@ -33,7 +30,11 @@ export default function Header() {
       <div className={style.mobileSlogan}>
         <h4 className={style.mobileSloganItem}>
           {config.site.slogan.map((slogan, index) => {
-            return <span key={index} className={style.mobileSloganSlug}>{slogan}.</span>;
+            return (
+              <span key={index} className={style.mobileSloganSlug}>
+                {slogan}.
+              </span>
+            );
           })}
         </h4>
       </div>

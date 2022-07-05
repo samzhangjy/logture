@@ -1,10 +1,9 @@
-import React, { FC } from "react";
-import Card from "./Card";
-import GridCol from "./Grid/GridCol";
-import GridContainer from "./Grid/GridContainer";
-import { Post } from "../lib/api";
-import style from "../styles/Post.module.scss";
-import config from "../config";
+import config from "config";
+import { FC } from "react";
+import { Post } from "../../lib/api";
+import Card from "../Card/Card";
+import { GridCol, GridContainer } from "../Grid";
+import style from "./Posts.module.scss";
 
 export interface PostsProps {
   posts: Post[];

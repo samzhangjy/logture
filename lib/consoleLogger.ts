@@ -5,7 +5,7 @@ const banner = `
  / /___/ /_/ / /_/ // / / /_/ / /  /  __/
 /_____/\\____/\\__, //_/  \\__,_/_/   \\___/ 
             /____/                                 
-`
+`;
 
 const message = `
 ${banner}
@@ -13,7 +13,7 @@ ${banner}
 Powered by %cLogTure%cv0.0.1%c
 
 %cGitHub: https://github.com/samzhangjy/logture%c
-`
+`;
 
 const consoleLogger = () => {
   console.log(
@@ -24,6 +24,6 @@ const consoleLogger = () => {
     "font-weight: bold;",
     ""
   );
-}
+};
 
 export default consoleLogger;

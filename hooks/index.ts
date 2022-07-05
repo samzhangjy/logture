@@ -1,5 +1,3 @@
 import useScrollTrigger from "./scrollTrigger";
 
-export {
-  useScrollTrigger
-}
+export { useScrollTrigger };

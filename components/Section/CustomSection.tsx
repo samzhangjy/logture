@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import { FC } from "react";
+import Card, { CardProps } from "../Card";
+import GridCol from "../Grid/GridCol";
+import GridContainer from "../Grid/GridContainer";
 import Section from "./Section";
-import GridContainer from "./Grid/GridContainer";
-import GridCol from "./Grid/GridCol";
-import Card, { CardProps } from "./Card";
 
 export interface CustomSectionProps {
   name: string;
@@ -17,9 +17,7 @@ const CustomSection: FC<CustomSectionProps> = (props) => {
         <GridContainer cols={12} gap="20px">
           {props.data.map((item, index) => (
             <GridCol key={index} colSpan={6} sm={12}>
-              <Card
-                {...item}
-              />
+              <Card {...item} />
             </GridCol>
           ))}
         </GridContainer>
@@ -32,6 +30,6 @@ const CustomSection: FC<CustomSectionProps> = (props) => {
       )}
     </Section>
   );
-}
+};
 
 export default CustomSection;

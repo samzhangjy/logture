@@ -1,8 +1,8 @@
-import React, { FC } from "react";
-import style from "../styles/Card.module.scss";
-import GridContainer from "./Grid/GridContainer";
-import GridCol from "./Grid/GridCol";
+import GridCol from "@/components/Grid/GridCol";
+import GridContainer from "@/components/Grid/GridContainer";
 import Link from "next/link";
+import { FC } from "react";
+import style from "./Card.module.scss";
 
 export interface CardProps {
   cover?: string;
@@ -76,7 +76,9 @@ const Card: FC<CardProps> = ({
               <h5 className={style.cardTitle}>{title}</h5>
             )}
             <div className={style.cardDetailsSpacer} />
-            {description && <p className={style.cardDescription}>{description}</p>}
+            {description && (
+              <p className={style.cardDescription}>{description}</p>
+            )}
             {tags?.map((value, index) => (
               <Link href={`/tags/${value}`} key={index} passHref>
                 <a className={style.cardTag}>

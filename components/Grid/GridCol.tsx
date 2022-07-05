@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 export interface GridColProps {
   colSpan: number;
@@ -17,12 +17,8 @@ const GridCol: FC<GridColProps> = (props) => {
   if (props.lg) colSpan += `_lg-${props.lg}`;
   if (props.xl) colSpan += `_xl-${props.xl}`;
   return (
-    <div
-      className={`${colSpan} ${props.className}`}
-    >
-      {props.children}
-    </div>
+    <div className={`${colSpan} ${props.className}`}>{props.children}</div>
   );
-}
+};
 
 export default GridCol;

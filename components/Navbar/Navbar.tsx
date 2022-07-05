@@ -1,9 +1,8 @@
-import { FC, useState } from "react";
 import Link from "next/link";
-import React from "react";
-import config from "../config";
-import style from "../styles/Navbar.module.scss";
+import { FC, useState } from "react";
 import { IoMenuOutline } from "react-icons/io5";
+import config from "../../config";
+import style from "./Navbar.module.scss";
 
 export interface NavbarProps {
   show?: boolean;
