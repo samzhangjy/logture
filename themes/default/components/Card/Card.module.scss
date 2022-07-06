@@ -1,0 +1,111 @@
+@import "../../styles/globals.scss";
+
+.card {
+  margin-top: 20px;
+  border: 2px solid $primary-light;
+  padding: 20px;
+  transition: ease-in-out 0.3s;
+  height: calc(100% - 64px);
+  color: $foreground;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 0px $primary;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translate(4px, 4px);
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: $foreground-dark;
+  }
+}
+
+.cardActivateOnTitle {
+  margin-top: 20px;
+  border: 2px solid $primary;
+  padding: 20px;
+  transition: ease-in-out 0.3s;
+  height: calc(100% - 64px);
+}
+
+.cardCover {
+  width: calc(100% - 6px);
+  border: 2px solid $secondary;
+  border-left-color: $background;
+  border-bottom-color: $background;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: $hover;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    border-left-color: $background-dark;
+    border-bottom-color: $background-dark;
+  }
+}
+
+.cardTitleClick {
+  text-decoration: underline;
+  transition: all 0.3s;
+  color: $foreground;
+
+  &:hover {
+    color: $hover;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: $foreground-dark;
+  }
+}
+
+.cardTopCover {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.cardDescription {
+  color: $foreground;
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: $foreground-dark;
+  }
+}
+
+.cardDetailsSpacer {
+  margin-top: 10px;
+}
+
+.cardFooter {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: $text-secondary;
+}
+
+.cardTag {
+  margin: 15px 10px 5px 0px;
+  display: inline-block;
+  background-color: $secondary;
+  color: $white;
+  padding: 5px;
+  transition: all 0.3s;
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: 3px 3px 0px $hover;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+  }
+}
+
+@media screen and (prefers-color-scheme: "dark") {
+  .cardFooter {
+    color: $text-secondary-dark;
+  }
+}

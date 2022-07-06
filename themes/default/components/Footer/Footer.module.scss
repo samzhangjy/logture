@@ -1,18 +1,18 @@
-@import "./variables.scss";
-@import "./gridlex.min.css";
+@import "../../styles/globals.scss";
 
-// Normalize styles and apply fonts
-body {
-  margin: 0;
-  padding: 0;
+.footer {
   background-color: $background;
   color: $foreground;
+  padding: 50px 30px 50px 30px;
+  border-bottom: 4px solid $primary-light;
 }
 
+.footer a {
+  color: $primary;
+}
 
-// Dark mode
 @media (prefers-color-scheme: dark) {
-  body {
+  .footer {
     background-color: $background-dark;
     color: $foreground-dark;
   }

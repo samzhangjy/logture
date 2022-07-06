@@ -1,0 +1,16 @@
+@import "../../styles/globals.scss";
+
+.sectionSpacer {
+  margin-top: 50px;
+}
+
+.sectionContainer {
+  padding: 20px;
+  border: 4px solid $secondary;
+  z-index: 1000;
+}
+
+.sectionTitle {
+  text-align: right;
+  border-left: 3px solid $primary-light;
+}

@@ -1,11 +1,8 @@
-import "@/styles/globals.scss";
-import "@/styles/gridlex.min.css";
-import "@/styles/typography.scss";
-import "@/styles/variables.scss";
 import config from "config";
 import consoleLogger from "@/lib/consoleLogger";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import "@/styles/globals.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   if (config.showPoweredBy === undefined || config.showPoweredBy)

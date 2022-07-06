@@ -1,0 +1,12 @@
+@import "./variables.scss";
+@import "./typography.scss";
+
+.container {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+
+  & a {
+    text-decoration: none;
+  }
+}

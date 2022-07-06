@@ -1,0 +1,109 @@
+@import "../../styles/globals.scss";
+
+.navbarContainer {
+  transition: 0.5s;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  transition: all 0.5s;
+  background-color: $primary;
+  width: 100%;
+  z-index: 100;
+  padding: 20px;
+  color: $white;
+  opacity: 100%;
+}
+
+.navbarTitle {
+  margin-right: 15px !important;
+}
+
+.navbarHide {
+  transition: all 0.5s;
+  opacity: 0%;
+  position: absolute;
+  color: $white;
+}
+
+.link {
+  margin: 0px 10px 0px 10px;
+  padding: 0px 5px 0px 5px;
+  color: $white;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $hover;
+    color: $black;
+    box-shadow: 3px 3px 0px $secondary;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+  }
+}
+
+.linkItem {
+  font-size: 15px !important;
+  padding: 4px;
+}
+
+.navbarToggle {
+  display: none;
+}
+
+.mobileNavbar {
+  display: none;
+}
+
+@media screen and (max-width: $break-sm) {
+  .navbar {
+    display: block;
+  }
+
+  .navbarToggle {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    color: $white;
+    font-size: $heading6;
+    margin-right: 10px;
+  }
+
+  .navbarTitle {
+    display: inline-block;
+  }
+
+  .linkItem,
+  .link {
+    display: none;
+  }
+
+  .mobileNavbar {
+    display: block;
+    transition: all 0.2s;
+    padding: 0px;
+  }
+
+  .mobileNavbarHide {
+    display: none;
+  }
+
+  .mobileLink {
+    color: $white;
+  }
+
+  .mobileLinkItem {
+    width: calc(100% - 80px);
+    padding: 10px 20px 10px 20px;
+    margin-top: 5px !important;
+
+    &:active {
+      background-color: $hover;
+      box-shadow: 5px 5px 0px $secondary;
+    }
+  }
+}

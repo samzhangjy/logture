@@ -1,0 +1,84 @@
+@import "./variables.scss";
+
+.typography {
+  font-family: "Roboto", Arial, sans-serif;
+
+  // Common normalize for headings and body texts
+  & h1 {
+    font-size: $heading1;
+    letter-spacing: -1.5px;
+    font-weight: 300;
+    line-height: 108px;
+    margin: 0;
+  }
+
+  & h2 {
+    font-size: $heading2;
+    letter-spacing: -0.5px;
+    font-weight: 300;
+    line-height: 72px;
+    margin: 0;
+  }
+
+  & h3 {
+    font-size: $heading3;
+    letter-spacing: 0px;
+    font-weight: 400;
+    line-height: 60px;
+    margin: 0;
+  }
+
+  & h4 {
+    font-size: $heading4;
+    letter-spacing: 0.25px;
+    font-weight: 400;
+    line-height: 48px;
+    margin: 0;
+  }
+
+  & h5 {
+    font-size: $heading5;
+    letter-spacing: 0px;
+    font-weight: 400;
+    line-height: 36px;
+    margin: 0;
+  }
+
+  & h6 {
+    font-size: $heading6;
+    letter-spacing: 0.15px;
+    font-weight: 500;
+    line-height: 33px;
+    margin: 0;
+  }
+
+  & p {
+    font-size: $body1;
+    letter-spacing: 0.1px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 0;
+  }
+
+  @media screen and (max-width: $break-sm) {
+    & h1 {
+      font-size: $heading1-sm;
+    }
+
+    & h2 {
+      font-size: $heading2-sm;
+    }
+
+    & h3 {
+      font-size: $heading3-sm;
+    }
+
+    & h4 {
+      font-size: $heading4-sm;
+    }
+
+    & h5 {
+      font-size: $heading5-sm;
+    }
+  }
+}

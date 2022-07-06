@@ -1,56 +1,49 @@
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
-import Navbar from "@/components/Navbar/Navbar";
-import Posts from "@/components/Posts/Posts";
-import Section from "@/components/Section/Section";
 import { getAllTags, getPostsByTag, Post } from "@/lib/api";
 import { getFormattedText } from "@/lib/formatTemplate";
+import getConfig from "@/lib/getConfig";
 import config from "config";
 import "highlight.js/styles/github-dark.css";
-import { useScrollTrigger } from "hooks";
 import { GetStaticProps, NextPage } from "next";
 import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { FC } from "react";
 
-export interface ViewTagPostsProps {
+interface ViewTagRouteProps {
   posts: Post[];
   tag: string;
 }
 
-const ViewTagPosts: NextPage<ViewTagPostsProps> = ({ tag, posts }) => {
+export interface TagType {
+  title: string;
+  description: string;
+  posts: Post[];
+}
+
+export interface ViewTagProps {
+  tag: TagType;
+  getConfig: (path: string) => any;
+}
+
+const ViewTagPosts: NextPage<ViewTagRouteProps> = ({ tag, posts }) => {
   const router = useRouter();
-  const trigger = useScrollTrigger(150);
-  const title = getFormattedText(config.tags.title, "tag", tag);
-  const description = getFormattedText(config.tags.description, "tag", tag);
+  const ViewTag: FC<ViewTagProps> = getConfig("theme.tags.ViewTag");
+  const title = getFormattedText(getConfig("tags.title"), "tag", tag);
+  const description = getFormattedText(getConfig("tags.description"), "tag", tag);
   if (!router.isFallback && !tag) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
-    <div className="container">
+    <>
       <Head>
         <title>
           {title} - {config.site.title}
         </title>
         <meta name="description" content={description} />
       </Head>
-      <Navbar show={trigger} />
-      <Header />
-      <Section
-        title={title}
-        description={
-          <span
-            dangerouslySetInnerHTML={{
-              __html: description,
-            }}
-          />
-        }
-      >
-        <Posts posts={posts} />
-      </Section>
-      <Footer />
-    </div>
+      <ViewTag tag={{ title, description, posts }} getConfig={getConfig} />
+    </>
   );
 };
 

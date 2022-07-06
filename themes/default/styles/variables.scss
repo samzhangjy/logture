@@ -1,0 +1,44 @@
+// Typography variables
+$heading1: 96px;
+$heading1-sm: 60px;
+$heading2: 60px;
+$heading2-sm: 48px;
+$heading3: 48px;
+$heading3-sm: 34px;
+$heading4: 34px;
+$heading4-sm: 24px;
+$heading5: 24px;
+$heading5-sm: 20px;
+$heading6: 20px;
+$heading6-sm: 16px;
+$body1: 18px;
+$body2: 16px;
+
+// Responsive breakpoints
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 1024px;
+$break-xl: 1280px;
+
+// Theme colors
+$white: #ffffff;
+$black: #000000;
+$gray: #1e293b;
+$background: $white;
+$foreground: $black;
+$background-dark: $black;
+$foreground-dark: $white;
+$primary: #6366f1;
+$primary-light: #a5b4fc;
+$secondary: #10b981;
+$secondary-light: #86efac;
+$hover: #eab308;
+$hover-light: #fde047;
+$text-secondary: #475569;
+$text-secondary-dark: #94a3b8;
+$code-background: $gray;
+$code-foreground: $white;
+
+$blockquote: $primary;
+$divider: $hover;
+$link: $primary;

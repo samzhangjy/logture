@@ -1,18 +1,16 @@
-import Footer from "@/components/Footer/Footer";
-import Navbar from "@/components/Navbar/Navbar";
-import Section from "@/components/Section/Section";
+import defaultConfig, { ConfigType } from "@/config/default";
 import { getAllPosts, getPostBySlug, Post } from "@/lib/api";
+import getConfig from "@/lib/getConfig";
 import markdownToHtml from "@/lib/markdownToHtml";
-import style from "@/styles/ViewPost.module.scss";
 import config from "config";
 import "highlight.js/styles/github-dark.css";
-import { useScrollTrigger } from "hooks";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { FC } from "react";
 
-export interface PostProps {
+export interface PostRouteProps {
   post: Post;
 }
 
@@ -20,31 +18,29 @@ export interface PostStaticParams {
   slug: string;
 }
 
-const ViewPost: NextPage<PostProps> = ({ post }) => {
+export interface ViewPostProps {
+  post: Post;
+  config: ConfigType;
+  defaultConfig: ConfigType;
+}
+
+const ViewPostRoute: NextPage<PostRouteProps> = ({ post }) => {
   const router = useRouter();
-  const trigger = useScrollTrigger(150);
+  const ViewPost: FC<ViewPostProps> = getConfig("theme.posts.ViewPost");
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
   return (
-    <div className="container">
+    <>
       <Head>
         <title>
           {post.title} - {config.site.title}
         </title>
         <meta name="description" content={post.desc} />
       </Head>
-      <Navbar show={trigger} />
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={post.cover} className={style.coverImage} alt="" />
-      <Section title={post.title} description={post.desc} titleLg>
-        <div
-          dangerouslySetInnerHTML={{ __html: post.content }}
-          className="post"
-        ></div>
-      </Section>
-      <Footer />
-    </div>
+      <ViewPost post={post} config={config} defaultConfig={defaultConfig} />
+    </>
   );
 };
 
@@ -80,4 +76,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export default ViewPost;
+export default ViewPostRoute;

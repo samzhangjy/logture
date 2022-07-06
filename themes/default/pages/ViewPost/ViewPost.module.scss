@@ -1,0 +1,77 @@
+@import "../../styles/globals.scss";
+
+.coverImage {
+  width: 100%;
+}
+
+// Post rendering styles (like Tailwind `prose`)
+.post {
+  & h1 {
+    margin: 30px 0px 30px 0px;
+  }
+
+  & h2 {
+    margin: 25px 0px 25px 0px;
+  }
+
+  & h3 {
+    margin: 20px 0px 20px 0px;
+  }
+
+  & h4 {
+    margin: 10px 0px 10px 0px;
+  }
+
+  & h5 {
+    margin: 8px 0px 8px 0px;
+  }
+
+  & p {
+    margin: 8px 0px 8px 0px;
+  }
+
+  & li {
+    margin: 10px 0px 10px 3px;
+  }
+
+  & a {
+    color: $link;
+  }
+
+  & .hljs {
+    margin: 20px 0px 20px 0px;
+  }
+
+  & pre {
+    border-radius: 0px !important;
+  }
+
+  & code {
+    padding: 3px 5px 3px 5px;
+    font-family: "Ubuntu Mono", monospace;
+    background-color: $code-background;
+    color: $code-foreground;
+  }
+
+  & iframe {
+    width: 100%;
+    min-height: 500px;
+  }
+
+  & img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  & hr {
+    border: 1px solid $divider;
+    margin: 30px 0px 30px 0px;
+  }
+
+  & blockquote {
+    border-left: 3px solid $blockquote;
+    padding: 10px 0px 10px 20px;
+    margin: 0px;
+  }
+}

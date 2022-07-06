@@ -1,0 +1,125 @@
+@import "../../styles/globals.scss";
+
+.slogan {
+  position: absolute;
+  right: 30px;
+  top: 40px;
+}
+
+.titleContainer {
+  width: 70vw;
+}
+
+.navigationContainer {
+  display: inline;
+}
+
+.sloganItem {
+  font-weight: bold !important;
+  letter-spacing: 0.1rem !important;
+  text-transform: uppercase;
+}
+
+.titleContainer {
+  background-color: $primary;
+  color: #fff;
+  padding: 50px 20px 20px 20px;
+  height: 350px;
+}
+
+.spacer,
+.spacerSubtitle {
+  margin-top: 20px;
+}
+
+.navigation {
+  color: $white;
+  transition: all 0.2s;
+  text-decoration: none;
+  position: relative;
+  color: $hover-light;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    background: $secondary;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+    margin-top: 5px;
+  }
+
+  & .navigationText {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.mobileSlogan,
+.mobileSloganItem,
+.mobileSloganSlug {
+  display: none;
+}
+
+@media screen and (max-width: $break-sm) {
+  .slogan,
+  .sloganItem {
+    display: none !important;
+  }
+
+  .titleContainer {
+    width: 100%;
+  }
+
+  .title {
+    font-size: $heading2;
+  }
+
+  .spacer {
+    margin: 0px;
+  }
+
+  .spacerSubtitle {
+    margin: 15px;
+  }
+
+  .subtitle {
+    font-size: $heading5;
+  }
+
+  .navigationText {
+    font-size: $heading6;
+  }
+
+  .navigationContainer {
+    width: calc(100% - 15px);
+  }
+
+  .mobileSlogan {
+    display: block;
+    padding: 10px;
+  }
+
+  .mobileSloganItem {
+    display: block;
+    margin: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+  }
+
+  .mobileSloganSlug {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}

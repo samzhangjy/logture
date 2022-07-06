@@ -1,34 +1,42 @@
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
-import Navbar from "@/components/Navbar/Navbar";
-import { CustomSection } from "@/components/Section";
+import { SectionConfigType } from "@/config/default";
+import getConfig from "@/lib/getConfig";
 import config from "config";
 import "highlight.js/styles/github-dark.css";
-import { useScrollTrigger } from "hooks";
 import { getAllSections, getSectionBySlug } from "lib/api";
 import { GetStaticProps, NextPage } from "next";
 import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { FC } from "react";
 
-export interface SectionDataItem {
-  title: string;
-  description: string;
-  cover: string;
-  link: string;
-}
-
-export interface Section {
-  data: SectionDataItem[] | string;
-  name: string;
-  description: string;
-  slug?: string;
-  newPage?: boolean;
+interface ViewSectionRouteProps {
+  section: SectionConfigType;
 }
 
 export interface ViewSectionProps {
-  section: Section;
+  section: SectionConfigType;
+  getConfig: (path: string) => any;
 }
+
+const ViewSectionRoute: NextPage<ViewSectionRouteProps> = ({ section }) => {
+  const router = useRouter();
+  const ViewSection: FC<ViewSectionProps> = getConfig("theme.sections.ViewSection");
+  if (!router.isFallback && !section?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
+
+  return (
+    <>
+      <Head>
+        <title>
+          {section.name} - {config.site.title}
+        </title>
+        <meta name="description" content={section.description} />
+      </Head>
+      <ViewSection section={section} getConfig={getConfig} />
+    </>
+  );
+};
 
 interface ViewSectionSlug {
   slug: string;
@@ -37,28 +45,6 @@ interface ViewSectionSlug {
 interface ViewSectionParam {
   params: ViewSectionSlug;
 }
-
-const ViewSection: NextPage<ViewSectionProps> = ({ section }) => {
-  const router = useRouter();
-  const trigger = useScrollTrigger(150);
-  if (!router.isFallback && !section?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
-  return (
-    <div className="container">
-      <Head>
-        <title>
-          {section.name} - {config.site.title}
-        </title>
-        <meta name="description" content={section.description} />
-      </Head>
-      <Navbar show={trigger} />
-      <Header />
-      <CustomSection {...section} />
-      <Footer />
-    </div>
-  );
-};
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
   let slug = "";
@@ -75,7 +61,7 @@ export async function getStaticPaths() {
   const sections = getAllSections();
   const slugs: ViewSectionParam[] = [];
 
-  sections.map((value) => {
+  sections.forEach((value) => {
     if (value.newPage && value.slug) {
       slugs.push({
         params: {
@@ -83,7 +69,6 @@ export async function getStaticPaths() {
         },
       });
     }
-    return null;
   });
 
   return {
@@ -92,4 +77,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default ViewSection;
+export default ViewSectionRoute;
