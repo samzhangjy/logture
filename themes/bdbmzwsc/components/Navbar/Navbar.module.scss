@@ -1,0 +1,144 @@
+@import "../../styles/globals.scss";
+
+.navbarContainer {
+  transition: 0.5s;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  transition: all 0.5s;
+  background-color: $background;
+  width: calc(100% - 40px);
+  z-index: 100;
+  padding: 15px 20px 15px 20px;
+  color: $foreground;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+  top: 0px;
+
+  @media screen and (prefers-color-scheme: dark) {
+    background-color: $background-dark;
+    color: $foreground-dark;
+    border-bottom: 1px solid $border-dark;
+  }
+}
+
+.navbarTitle {
+  margin: 0px !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  width: 300px;
+  word-break: keep-all;
+}
+
+.links {
+  right: 0px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.link {
+  margin: 0px 15px 0px 15px;
+  color: $text-secondary;
+  text-decoration: none;
+  transition: all 0.3s;
+  border-radius: 5px;
+
+  &:hover {
+    color: $foreground;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: $text-secondary-dark;
+  
+    &:hover {
+      color: $foreground-dark;
+    }
+  }
+}
+
+.linkActive {
+  color: $foreground;
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: $foreground-dark;
+  }
+}
+
+.linkItem {
+  font-size: 15px !important;
+  padding: 4px;
+}
+
+.navbarToggle {
+  display: none;
+}
+
+.mobileNavbar {
+  display: none;
+}
+
+@media screen and (max-width: $break-sm) {
+  .navbar {
+    display: block;
+  }
+
+  .navbarToggle {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    color: $foreground;
+    font-size: $heading5;
+    margin-right: 10px;
+    margin-top: 5px;
+
+    @media screen and (prefers-color-scheme: dark) {
+      color: $foreground-dark;
+    }
+  }
+
+  .navbarTitle {
+    display: inline-block;
+  }
+
+  .linkItem,
+  .link {
+    display: none;
+  }
+
+  .mobileNavbar {
+    display: block;
+    transition: all 0.2s;
+    padding: 0px;
+  }
+
+  .mobileNavbarHide {
+    display: none;
+  }
+
+  .mobileLink {
+    color: $text-secondary;
+
+    @media screen and (prefers-color-scheme: dark) {
+      color: $text-secondary-dark;
+    }
+  }
+
+  .mobileLinkItem {
+    width: calc(100% - 80px);
+    padding: 10px 20px 10px 20px;
+    margin-top: 5px !important;
+
+    &:active {
+      color: $foreground;
+    }
+
+    @media screen and (prefers-color-scheme: dark) {
+      &:active {
+        color: $foreground-dark;
+      }
+    }
+  }
+}

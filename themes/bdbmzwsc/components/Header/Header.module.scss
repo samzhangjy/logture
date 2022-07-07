@@ -1,0 +1,118 @@
+@import "../../styles/globals.scss";
+
+
+.body {
+  
+
+  display: flex;
+}
+.navigationContainer {
+  display: inline;
+}
+
+.titleContainer {
+  padding: 50px 20px 20px 20px;
+}
+.title {
+  font-size: 100px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  animation: 2s typing forwards ; 
+}
+@keyframes typing {
+    0% {
+      width: 0ch;
+    }
+    100%{
+      width: 8ch;
+    }
+}
+
+.testanimation {
+    font-size: 100px;
+    color: $black;
+    text-transform: uppercase;
+    line-height: 1;
+    display: block;
+    left: 270px;
+    position: absolute;
+    transform: translate3d(-50%,-50%,0);
+    letter-spacing: -2.2rem;
+    animation: 3s letterspacting alternate ease-in-out infinite;
+}
+@keyframes letterspacting {
+  0% {
+    letter-spacing: -2.4rem;
+    filter: blur(.3rem);
+  }
+  50% {
+    filter: blur(.5rem);
+  }
+  100% {
+    letter-spacing: .5rem;
+    filter: blur(0rem);
+    color: rgb(0, 0, 0);
+  }
+}
+
+$speed: 8s;
+$wordCount: 4;
+.word {
+  font-size: 100px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  animation: change $speed infinite ease-in-out;
+  left: 50%;
+  top: 50%;
+
+  @for $i from 0 to $wordCount {
+      &:nth-child(#{$i+1}) {
+        animation-delay: ($speed/($wordCount+1) * $i)-$speed;
+
+
+      }
+  }
+}
+
+@keyframes change {
+  0%,
+  5%,
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  50%,
+  80% {
+    filter: blur(80px);
+    opacity: 0;
+  }
+}
+
+.spacer,
+.spacerSubtitle {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: $break-sm) {
+  .title {
+    font-size: 100px;
+    width: 6ch;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    overflow: hidden;
+  }
+
+  .spacer {
+    margin: 0px;
+  }
+
+  .spacerSubtitle {
+    margin: 15px;
+  }
+
+  .subtitle {
+    font-size: $heading5;
+  }
+}

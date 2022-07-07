@@ -1,0 +1,24 @@
+@import "../../styles/globals.scss";
+
+.container {
+  height: 100%;
+  width: 100%;
+  color: $foreground;
+  overflow-x: hidden;
+}
+
+.spacerLeft {
+  height: 20px;
+  width: 30%;
+  background-color: $secondary;
+  position: absolute;
+  left: 0px;
+}
+
+.spacerRight {
+  height: 20px;
+  width: 30%;
+  background-color: $primary;
+  position: absolute;
+  right: 0px;
+}

@@ -1,0 +1,151 @@
+@import "../../styles/globals.scss";
+
+.transformloading {
+  animation: 2s loading infinite;
+  
+}
+@keyframes loading {
+  0% {
+    transform: translate(0,0);
+  }
+  100% {
+    transform: translate(100%,100%)
+  }
+}
+
+.card {
+  margin-top: 20px;
+  border: 1px solid $border;
+  padding: 20px;
+  transition: ease-in-out 0.3s;
+  height: calc(100% - 64px);
+  color: $foreground;
+
+  &:hover {
+    cursor: pointer;
+    border-color: $foreground;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: $foreground-dark;
+    border-color: $border-dark;
+
+    &:hover {
+      border-color: $foreground-dark;
+    }
+  }
+}
+
+.cardActivateOnTitle {
+  margin-top: 20px;
+  border: 1px solid $border;
+  transition: ease-in-out 0.3s;
+  height: calc(100% - 64px);
+  z-index: 100;
+
+  @media screen and (prefers-color-scheme: dark) {
+    border-color: $border-dark;
+  }
+}
+
+.cardContent {
+  padding: 20px;
+}
+
+.cardCover {
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.cardTitle {
+  margin: 0px !important;
+}
+
+.cardTitleClick {
+  text-decoration: underline;
+  transition: all 0.3s;
+  color: $foreground;
+  margin: 0px !important;
+
+  &:hover {
+    cursor: pointer;
+    color: $primary-dark;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: $foreground-dark;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.cardTopCover {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.cardDescription {
+  color: $foreground;
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: $foreground-dark;
+  }
+}
+
+.cardDetailsSpacer {
+  margin-top: 25px;
+}
+
+.cardFooter {
+  margin-top: 10px;
+  margin-bottom: 35px !important;
+  color: $text-secondary;
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: $text-secondary-dark;
+  }
+}
+
+.cardTagContainer {
+  .cardTagExplain {
+    color: $text-secondary;
+  }
+
+  .cardTag {
+    margin: 0px 5px 10px 0px;
+    display: inline-block;
+    color: $text-secondary;
+    transition: all 0.3s;
+    box-shadow: none;
+
+    &:hover {
+      color: $foreground;
+    }
+  }
+
+  .cardTag:not(:last-child)::after {
+    content: ", ";
+  }
+
+  .cardTag:last-child::after {
+    content: ".";
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    & .cardTagExplain, & .cardTag {
+      color: $text-secondary-dark;
+    }
+
+    & .cardTag:hover {
+      color: $foreground-dark;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: "dark") {
+  .cardFooter {
+    color: $text-secondary-dark;
+  }
+}

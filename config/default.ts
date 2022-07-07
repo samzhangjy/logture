@@ -5,7 +5,7 @@ import { ViewSectionProps } from "pages/sections/[slug]";
 import { ViewTagsProps } from "pages/tags";
 import { ViewTagProps } from "pages/tags/[slug]";
 import { FC } from "react";
-import defaultTheme from "themes/default";
+import defaultTheme from "themes/bdbmzwsc";
 
 export interface SiteConfigType {
   name: string;
