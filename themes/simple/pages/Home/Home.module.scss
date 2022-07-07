@@ -2,21 +2,27 @@
 
 .readMore {
   text-align: center;
-  padding: 15px;
-  background-color: $primary;
+  padding: 10px;
+  background-color: $background;
   transition: all 0.3s;
-  color: $white;
+  color: $foreground;
+  border: 1px solid $foreground;
 
   &:hover {
-    background-color: $hover;
-    box-shadow: 5px 5px 0px $secondary;
-    color: $foreground;
+    background-color: $foreground;
+    color: $background;
     cursor: pointer;
   }
 
-  &:active {
-    box-shadow: none;
-    transform: translate(5px, 5px);
+  @media screen and (prefers-color-scheme: dark) {
+    background-color: $background-dark;
+    color: $foreground-dark;
+    border-color: $foreground-dark;
+
+    &:hover {
+      background-color: $foreground-dark;
+      color: $background-dark;
+    }
   }
 }
 

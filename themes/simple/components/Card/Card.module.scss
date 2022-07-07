@@ -110,11 +110,6 @@
     &:hover {
       color: $foreground;
     }
-
-    &:active {
-      box-shadow: none;
-      transform: translate(3px, 3px);
-    }
   }
 
   .cardTag:not(:last-child)::after {
