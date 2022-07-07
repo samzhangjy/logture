@@ -3,7 +3,6 @@ import { FC } from "react";
 import { Section } from "../../components/Section";
 import { useScrollTrigger } from "../../hooks";
 import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import Posts from "../../components/Posts";
 import style from "./ViewTag.module.scss";
@@ -14,7 +13,6 @@ const ViewTag: FC<ViewTagProps> = ({ tag }) => {
   return (
     <div className={`${style.container} ${style.typography}`}>
       <Navbar show={trigger} />
-      <Header />
       <Section
         title={tag.title}
         description={
@@ -24,6 +22,7 @@ const ViewTag: FC<ViewTagProps> = ({ tag }) => {
             }}
           />
         }
+        titleLg
       >
         <Posts posts={tag.posts} />
       </Section>

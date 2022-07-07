@@ -1,19 +1,19 @@
 @import "./variables.scss";
 @import "./gridlex.min.css";
 
+:root {
+  color-scheme: light;
+}
+
 // Normalize styles and apply fonts
 body {
   margin: 0;
   padding: 0;
-  background-color: $background;
-  color: $foreground;
 }
 
-
-// Dark mode
+// Dark scrollbar
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: $background-dark;
-    color: $foreground-dark;
+  :root {
+    color-scheme: dark;
   }
 }

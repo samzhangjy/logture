@@ -1,5 +1,5 @@
-import GridCol from "themes/default/components/Grid/GridCol";
-import GridContainer from "themes/default/components/Grid/GridContainer";
+import GridCol from "../../components/Grid/GridCol";
+import GridContainer from "../../components/Grid/GridContainer";
 import Link from "next/link";
 import { FC } from "react";
 import style from "./Card.module.scss";

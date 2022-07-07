@@ -1,4 +1,4 @@
-import defaultTheme from "themes/default";
+import simpleTheme from "themes/simple";
 
 const config = {
   // global site information configuration
@@ -151,7 +151,7 @@ const config = {
       samzhangjy
     </a>.
   `, // extra footer content, can include HTML tags
-  theme: defaultTheme, // theme config
+  theme: simpleTheme, // theme config
 };
 
 export default config;

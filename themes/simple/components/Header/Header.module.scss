@@ -1,0 +1,32 @@
+@import "../../styles/globals.scss";
+
+.navigationContainer {
+  display: inline;
+}
+
+.titleContainer {
+  padding: 50px 20px 20px 20px;
+}
+
+.spacer,
+.spacerSubtitle {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: $break-sm) {
+  .title {
+    font-size: $heading2;
+  }
+
+  .spacer {
+    margin: 0px;
+  }
+
+  .spacerSubtitle {
+    margin: 15px;
+  }
+
+  .subtitle {
+    font-size: $heading5;
+  }
+}
