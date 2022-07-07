@@ -1,0 +1,33 @@
+@import "../../styles/globals.scss";
+
+.readMore {
+  text-align: center;
+  padding: 10px;
+  background-color: $background;
+  transition: all 0.3s;
+  color: $foreground;
+  border: 1px solid $foreground;
+
+  &:hover {
+    background-color: $foreground;
+    color: $background;
+    cursor: pointer;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    background-color: $background-dark;
+    color: $foreground-dark;
+    border-color: $foreground-dark;
+
+    &:hover {
+      background-color: $foreground-dark;
+      color: $background-dark;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    color: $foreground-dark;
+  }
+}

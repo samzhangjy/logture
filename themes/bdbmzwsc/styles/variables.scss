@@ -1,0 +1,58 @@
+// Typography variables
+$heading1: 11.089rem;
+$heading1-sm: 3.052rem;
+$heading2: 6.854rem;
+$heading2-sm: 2.441rem;
+$heading3: 4.236rem;
+$heading3-sm: 1.953rem;
+$heading4: 2.618rem;
+$heading4-sm: 1.563rem;
+$heading5: 1.618rem;
+$heading5-sm: 1.25rem;
+$body1: 1rem;
+$body1-sm: 1rem;
+$body2: 0.618rem;
+$body2-sm: 0.8rem;
+
+$heading1-md: 4.209rem;
+$heading2-md: 3.157rem;
+$heading3-md: 2.369rem;
+$heading4-md: 1.777rem;
+$heading5-md: 1.333rem;
+$body1-md: 1rem;
+$body2-md: 0.75rem;
+
+// Responsive breakpoints
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 1024px;
+$break-xl: 1280px;
+
+// Theme colors
+$white: #ffffff;
+$black: #000000;
+$gray: #1e293b;
+$slate: #475569;
+$background: $white;
+$foreground: $black;
+$background-dark: $white;
+$foreground-dark: $black;
+$primary: #3b82f6;
+$primary-light: #93c5fd;
+$primary-dark: #2563eb;
+$secondary: #1e293b;
+$secondary-light: #475569;
+$hover: #facc15;
+$hover-light: #fde047;
+$text-secondary: #475569;
+$text-secondary-dark: #94a3b8;
+$code-background: $gray;
+$code-foreground: $white;
+$shadow: $slate;
+
+$blockquote: $primary;
+$divider: $hover;
+$link: $foreground;
+$link-dark: $foreground-dark;
+$border: #e2e8f0;
+$border-dark: #334155;

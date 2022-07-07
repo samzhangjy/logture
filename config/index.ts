@@ -1,4 +1,4 @@
-import simpleTheme from "themes/simple";
+import simpleTheme from "themes/bdbmzwsc";
 
 const config = {
   // global site information configuration
@@ -6,7 +6,7 @@ const config = {
     name: "LogTure", // site name
     title: "LogTure.", // site title
     description: "The geek way to blog.", // site description
-    slogan: ["Eat", "Code", "Sleep"], // slogans
+    slogan: ["Ate", "Code", "Sleep"], // slogans
     owner: "LogTure Team", // site owner, used in footer copyright
   },
   // post configuration

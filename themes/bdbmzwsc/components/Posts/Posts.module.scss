@@ -1,0 +1,13 @@
+@import "../../styles/globals.scss";
+
+.noPost {
+  padding: 10px;
+  background-color: $primary;
+  color: $white;
+  box-shadow: 10px 10px 0px $hover;
+
+  & .noPostText {
+    text-align: center !important;
+    position: relative;
+  }
+}

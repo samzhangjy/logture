@@ -1,0 +1,21 @@
+@import "../../styles/globals.scss";
+
+.footer {
+  background-color: $background;
+  color: $foreground;
+  padding: 0px 30px 50px 30px;
+  margin-top: 50px;
+  border-top: 1px solid $border;
+}
+
+.footer a {
+  color: $primary;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: $background-dark;
+    color: $foreground-dark;
+    border-color: $border-dark;
+  }
+}
