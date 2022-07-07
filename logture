@@ -3,6 +3,7 @@
 # address defaults to HTTPS
 CLONE_ADDRESS="https://github.com/samzhangjy/logture.git"
 POSTS_FOLDER="./posts"
+ASSETS_FOLDER="./assets"
 CONFIG_FILE="./config.ts"
 BUILD_OUTPUT="./build-output"
 IS_DEBUG=0
@@ -31,6 +32,7 @@ help() {
   echo "  --posts-folder=<loc>     Sepecify the post folder."
   echo "  --build-output=<loc>     Sepecify the output folder."
   echo "  --config-file=<loc>      Sepecify the LogTure posts configuration file."
+  echo "  --assets-folder=<loc>    Sepecify the assets folder."
 }
 
 version() {
@@ -62,6 +64,7 @@ while getopts ":vh-:" OPT; do
     posts-folder )  POSTS_FOLDER="$OPTARG" ;;
     build-output )  BUILD_OUTPUT="$OPTARG" ;;
     config-file ) CONFIG_FILE="$OPTARG" ;;
+    assets-folder ) ASSETS_FOLDER="$OPTARG" ;;
     ??* )   die "Illedgal option --$OPT" ;;
     ? )     exit 2 ;;
   esac
@@ -97,6 +100,10 @@ if [ $1 = "build" ]; then
   cp $CONFIG_FILE $BUILD_OUTPUT/config/index.ts
   if ! [ $? -eq 0 ]; then
     die "Failed to copy configuration file from given path. Please check if the file exists."
+  fi
+  cp -r $ASSETS_FOLDER $BUILD_OUTPUT/assets
+  if ! [ $? -eq 0 ]; then
+    die "Failed to copy assets folder from given path. Please check if the folder exists."
   fi
 
   echo "Done!"
