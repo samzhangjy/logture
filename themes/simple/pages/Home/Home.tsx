@@ -23,7 +23,7 @@ const Home: FC<HomeProps> = ({ posts, getConfig, isMorePosts }) => {
         description={getConfig("post.indexDescription")}
       >
         <Posts posts={posts} />
-        {!isMorePosts && (
+        {isMorePosts && (
           <Link href="/posts">
             <div className={style.readMore}>{getConfig("post.readMore")}</div>
           </Link>
