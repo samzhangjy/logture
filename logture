@@ -93,7 +93,7 @@ if [ $1 = "build" ]; then
   echo "Copying files to LogTure source..."
   rm -rf $BUILD_OUTPUT/posts
   rm $BUILD_OUTPUT/config/index.ts
-  cp -r $POSTS_FOLDER $BUILD_OUTPUT/posts
+  cp -r $POSTS_FOLDER $BUILD_OUTPUT
   if ! [ $? -eq 0 ]; then
     die "Failed to copy posts from given path. Please check if the folder exists."
   fi
@@ -101,7 +101,7 @@ if [ $1 = "build" ]; then
   if ! [ $? -eq 0 ]; then
     die "Failed to copy configuration file from given path. Please check if the file exists."
   fi
-  cp -r $PUBLIC_FOLDER $BUILD_OUTPUT/public
+  cp -r $PUBLIC_FOLDER $BUILD_OUTPUT
   if ! [ $? -eq 0 ]; then
     die "Failed to copy public folder from given path. Please check if the folder exists."
   fi
