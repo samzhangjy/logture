@@ -35,7 +35,7 @@ export const getPostBySlug = (slug: string) => {
 };
 
 export const getPostSlugs = () => {
-  return fs.readdirSync(postsDirectory);
+  return fs.readdirSync(postsDirectory).filter((slug) => !slug.startsWith("."));
 };
 
 export const getAllPosts = () => {

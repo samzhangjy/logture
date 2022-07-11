@@ -3,6 +3,7 @@ import consoleLogger from "@/lib/consoleLogger";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import "@/styles/globals.scss";
+import "katex/dist/katex.min.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   if (config.showPoweredBy === undefined || config.showPoweredBy)
