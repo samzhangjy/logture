@@ -12,21 +12,24 @@ const ViewPost: FC<ViewPostProps> = ({ post }) => {
     <>
       <Navbar show={trigger} />
       <div className={`${style.container} ${style.typography}`}>
-        <Section
-          title={post.title}
-          description={post.desc}
-          childrenBetweenTitle={
-            // eslint-disable-next-line @next/next/no-img-element 
-            <img src={post.cover} className={style.coverImage} alt="" />
-          }
-          titleLg
-          spaceLg
-        >
-          <div
-            dangerouslySetInnerHTML={{ __html: post.content }}
-            className={style.post}
-          ></div>
-        </Section>
+        <div className={style.postContainer}>
+          <Section
+            title={post.title}
+            description={post.desc}
+            childrenBetweenTitle={
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={post.cover} className={style.coverImage} alt="" />
+            }
+            titleLg
+            spaceLg
+            titleContainerStyle={style.titleContainer}
+          >
+            <div
+              dangerouslySetInnerHTML={{ __html: post.content }}
+              className={style.post}
+            ></div>
+          </Section>
+        </div>
         <Footer />
       </div>
     </>

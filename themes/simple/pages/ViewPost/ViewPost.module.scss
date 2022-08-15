@@ -1,11 +1,27 @@
 @import "../../styles/globals.scss";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 .coverImage {
+  max-width: 900px;
   width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.postContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.titleContainer {
+  max-width: 900px;
 }
 
 // Post rendering styles (like Tailwind `prose`)
 .post {
+  max-width: 800px;
+
   & h1 {
     font-size: $heading1-md;
     margin-top: 0px;
@@ -37,6 +53,7 @@
 
   & li {
     margin: 10px 0px 10px 3px;
+    font-size: $body1-md;
   }
 
   & a {
@@ -50,14 +67,14 @@
 
   & code {
     padding: 3px 5px 3px 5px;
-    font-family: "Ubuntu Mono", monospace;
+    font-family: "Fira Code", "Ubuntu Mono", monospace;
   }
 
   & pre {
-    border-radius: 10px;
+    border-radius: 0px;
 
     & code {
-      border-radius: 10px;
+      border-radius: 0px;
       background-color: $code-background;
       color: $code-foreground;
     }
@@ -69,9 +86,10 @@
   }
 
   & img {
-    width: 100%;
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: auto;
   }
 
   & hr {
