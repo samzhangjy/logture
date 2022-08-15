@@ -1,5 +1,5 @@
 @import "../../styles/globals.scss";
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 
 .coverImage {
   max-width: 900px;
@@ -9,13 +9,20 @@
 }
 
 .postContainer {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  @media screen and (min-width: $break-md) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .titleContainer {
   max-width: 900px;
+  width: 100%;
+
+  @media screen and (max-width: $break-sm) {
+    max-width: 100%;
+  }
 }
 
 // Post rendering styles (like Tailwind `prose`)
@@ -107,5 +114,9 @@
     & a {
       color: $link-dark;
     }
+  }
+
+  @media screen and (max-width: $break-sm) {
+    max-width: 100% !important;
   }
 }
