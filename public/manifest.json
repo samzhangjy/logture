@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "LogTure",
-    "short_name": "LogTure",
-    "description": "The geek way to blog.",
+    "name": "Sam's Blog",
+    "short_name": "Sam's Blog",
+    "description": "\u4e00\u4e2a\u70ed\u7231\u521b\u9020\u7684\u521d\u4e2d\u751f.",
     "icons": [
         {
             "src": "/icon-192x192.png",

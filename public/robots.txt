@@ -1,6 +1,8 @@
 # *
 User-agent: *
 Allow: /
+Allow: /posts/*
+Allow: /tags/*
 
 # Host
 Host: https://example.com

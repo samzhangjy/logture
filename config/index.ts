@@ -3,55 +3,59 @@ import simpleTheme from "themes/simple";
 const config = {
   // global site information configuration
   site: {
-    name: "LogTure", // site name
-    title: "LogTure.", // site title
-    description: "The geek way to blog.", // site description
+    name: "Sam's Blog", // site name
+    title: "Sam Zhang.", // site title
+    description: "A developer who loves open source.", // site description
     slogan: ["Eat", "Code", "Sleep"], // slogans
-    owner: "LogTure Team", // site owner, used in footer copyright
+    owner: "Sam Zhang", // site owner, used in footer copyright
   },
   // post configuration
   post: {
     folder: "posts", // post storage folder
-    title: "Posts", // post title (displayed on the index page and on the posts page)
-    description: "My blog posts.", // post description (displayed only on the posts page)
-    indexDescription: "View more posts on the posts page.", // post description (displayed only on the index page)
-    readMore: "Read more", // read more text on the index page
+    title: "博客",  // post title (displayed on the index page and on the posts page)
+    description: "我的博客文章",  // post description (displayed only on the posts page)
+    indexDescription: "在博客页面查看所有的博客存档",  // post description (displayed only on the index page)
+    readMore: "更多文章", // read more text on the index page
     postsToDisplay: 6, // number of posts to display on the index page
-    noPostText: "No posts yet.", // text to display when no posts exist for the current section
+    noPostText: "还没有文章", // text to display when no posts exist for the current section
   },
   // tag configuration
   tags: {
     // {{tag}} is the template string format in LogTure used to inject variables into the current string template
-    description: "Posts tagged with tag {{tag}}.", // tag description (displayed only on the tag page)
-    title: "Tag {{tag}}", // tag title (displayed on the tag page)
+    description: "标签为 {{tag}} 的文章",  // tag description (displayed only on the tag page)
+    title: "标签 {{tag}}",  // tag title (displayed on the tag page)
     // configuration for the `all tags` page
     allTags: {
-      title: "Tags", // title (displayed on the all tags page)
-      description: "All tags", // description (displayed only on the all tags page)
-      postCount: "{{count}} posts", // post count description (displayed on the all tags page)
-    },
+      title: "所有标签",  // title (displayed on the all tags page)
+      description: "博客中所有文章的标签汇总",  // description (displayed only on the all tags page)
+      postCount: "共有 {{count}} 篇文章",  // post count description (displayed on the all tags page)
+    }
   },
   // navbar links configuration
   links: [
     {
-      text: "Home", // link text
+      text: "首页", // link text
       link: "/", // link url
     },
     {
-      text: "Posts",
+      text: "博客",
       link: "/posts",
     },
     {
-      text: "Tags",
+      text: "标签",
       link: "/tags",
     },
     {
-      text: "Projects",
+      text: "项目",
       link: "/sections/projects",
     },
     {
+      text: "关于",
+      link: "https://samzhangjy.com",
+    },
+    {
       text: "GitHub",
-      link: "https://github.com/samzhangjy/logture",
+      link: "https://github.com/samzhangjy",
     },
   ],
   // custom sections configuration
@@ -63,85 +67,25 @@ const config = {
         // if data is an array, then each object in the array
         // represents a card with certain information
         {
-          title: "Project", // card title
+          title: "LogTure", // card title
           // card description
           description:
-            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "https://avatars.dicebear.com/api/miniavs/weilai.svg", // card cover, shown on the left of card description
-          link: "/", // the link to navigate to when clicking on the card
+            "📝 A modern and light-weight personal blogging framework built with Nextjs.",
+          cover: "/assets/projects/logture.png", // card cover, shown on the left of card description
+          link: "https://github.com/samzhangjy/logture", // the link to navigate to when clicking on the card
         },
         {
-          title: "Project",
-          description:
-            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "https://avatars.dicebear.com/api/miniavs/weilai.svg",
-          link: "/",
-        },
-        {
-          title: "Project",
-          description:
-            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "https://avatars.dicebear.com/api/miniavs/weilai.svg",
-          link: "/",
-        },
-        {
-          title: "Project",
-          description:
-            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "https://avatars.dicebear.com/api/miniavs/weilai.svg",
-          link: "/",
-        },
+          title: "VueTerm",
+          description: "An Ubuntu like terminal portfolio site.",
+          cover: "/assets/projects/vueterm.png",
+          link: "https://github.com/samzhangjy/VueTerm",
+        }
       ],
-      name: "Projects", // section name (title)
-      description: "A list of projects", // section description
+      name: "项目", // section name (title)
+      description: "我的开源项目们", // section description
       slug: "projects", // section slug, needed if the creation of a new page containing only this section is needed
       newPage: true, // weather to create a single page under `/sections/[slug]` or not
-      showOnIndex: false, // weather to show the current section on the index page or not
-    },
-    {
-      data: [
-        {
-          title: "John Doe",
-          description:
-            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "https://avatars.dicebear.com/api/miniavs/gfwl.svg",
-          link: "/",
-        },
-        {
-          title: "John Doe",
-          description:
-            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "https://avatars.dicebear.com/api/miniavs/gfwl.svg",
-          link: "/",
-        },
-        {
-          title: "John Doe",
-          description:
-            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "https://avatars.dicebear.com/api/miniavs/gfwl.svg",
-          link: "/",
-        },
-        {
-          title: "John Doe",
-          description:
-            "Culpa amet consequat anim in sunt incididunt adipisicing non eu sunt. Exercitation amet aliqua velit Lorem. Ex sit voluptate officia nulla reprehenderit duis reprehenderit exercitation commodo.",
-          cover: "https://avatars.dicebear.com/api/miniavs/gfwl.svg",
-          link: "/",
-        },
-      ],
-      name: "Members",
-      description: "A list of members",
-      slug: "members",
-      newPage: false,
-    },
-    // section data can also be a string, in which case it will be used as the main content of the section
-    {
-      data: `Consectetur fugiat qui veniam Lorem nisi officia do duis. Deserunt deserunt cillum esse mollit. Ipsum id pariatur velit et ea eiusmod est ullamco pariatur esse. Pariatur laborum quis ex nulla nisi laborum. Tempor velit nostrud deserunt occaecat occaecat ut exercitation. Reprehenderit cupidatat ad nostrud exercitation pariatur commodo aliquip duis ut qui laborum.
-  Cupidatat elit commodo anim dolor magna mollit culpa ea cillum laborum quis nisi excepteur do. Deserunt non magna nostrud eu fugiat cillum velit ut. Nulla duis sunt culpa esse aliquip Lorem esse consequat non duis. Reprehenderit aliquip sint id consectetur. Magna pariatur aliquip incididunt dolor magna elit nostrud Lorem officia velit dolore esse enim. Proident labore commodo dolor irure non aliqua duis incididunt ullamco qui reprehenderit ipsum deserunt.`,
-      name: "Join us",
-      description: "Join us",
-      slug: "join-us",
-      newPage: false,
+      showOnIndex: true,  // weather to show the current section on the index page or not
     },
   ],
   showPoweredBy: true, // change it to false if you want to hide the `Powered by LogTure` text and remove the console.log message
@@ -150,8 +94,12 @@ const config = {
     <a href="https://github.com/samzhangjy" rel="noreferrer" target="_blank">
       samzhangjy
     </a>.
+    <br />
+    <a href="https://beian.miit.gov.cn" rel="noreferrer" target="_blank">
+      津 ICP 备 2022003937 号
+    </a>.
   `, // extra footer content, can include HTML tags
-  theme: simpleTheme, // theme config
+  theme: simpleTheme,
 };
 
 export default config;
